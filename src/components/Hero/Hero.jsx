@@ -2,7 +2,9 @@ import './Hero.scss';
 
 function Hero () {
  return (
-  <section className="hero"></section>
+  <section className="hero">
+   <video src="" className="hero__video"></video>
+  </section>
  )
 }
 
