@@ -8,22 +8,73 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    flex-direction: row;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0.5rem;
+  }
+  @include desktop {
+    padding: 0 8rem;
+    margin-right: 2.5rem;
+  }
+
+  &__logo {
+    width: 120px;
+    height: 25px;
+    display: flex;
+    margin: 0 auto;
+    @include tablet {
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__right {
+    @include tablet {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+
   &__nav {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     width: 100%;
+    @include tablet {
+      align-items: center;
+      margin: 0;
+    }
   }
+  // &__search {
+  //   position: absolute;
+  //   left: 1.5rem;
+  //   top: 4.4rem;
+  //   width: 1rem;
+  //   height: 1rem;
+  // }
 
   &__input {
     font-family: AvenirNext LT Pro;
     border: 1px solid $bf-mercury;
     border-radius: 5px;
     padding: 0.5rem;
+    padding-left: 2rem;
     width: 75%;
     margin-right: 1rem;
     font-size: $reg-button;
     line-height: 20px;
+
+    @include tablet {
+      margin-right: 1.5rem;
+      width: 15rem;
+    }
+
+    @include desktop {
+      margin-right: 2rem;
+    }
   }
 
   &-icon__mobile {
@@ -32,6 +83,16 @@
     height: 36px;
     object-fit: cover;
     object-position: 15% 50%;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__button {
@@ -43,9 +104,27 @@
     width: 90%;
     margin-top: 1rem;
     text-transform: uppercase;
+
+    @include tablet {
+      padding: 0.8rem 3rem;
+      font-size: $reg-button;
+      margin: 0 1.5rem 0 0;
+    }
+    @include desktop {
+      margin-right: 2rem;
+    }
   }
 
   &-icon__desktop {
     display: none;
+
+    @include tablet {
+      display: flex;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      object-position: 15% 50%;
+    }
   }
 }
