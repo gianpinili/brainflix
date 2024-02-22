@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.main {
+  margin: 0 1rem;
+  @include desktop {
+    display: flex;
+  }
+}

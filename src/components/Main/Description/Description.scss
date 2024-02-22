@@ -1,0 +1,84 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.main {
+  &__title {
+    padding: 0 0rem 1rem 0;
+    font-size: $reg-section-header;
+    font-weight: $bold;
+    border-bottom: 1px solid $bf-mercury;
+    line-height: 2.25rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $bf-mercury;
+  }
+
+  &__artist {
+    font-size: $mobile-subheader;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__channel {
+    font-weight: $demi;
+    padding-bottom: 1rem;
+  }
+
+  &__date {
+    color: $bf-silver;
+  }
+
+  &__view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__stats {
+    font-size: $mobile-subheader;
+    padding: 1rem 0;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__img {
+    display: flex;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+
+  &__views {
+    color: $bf-silver;
+  }
+
+  &__like {
+    display: flex;
+    align-items: center;
+  }
+
+  &__likes {
+    color: $bf-silver;
+  }
+
+  &__heart {
+    margin-right: 0.5rem;
+  }
+
+  &__description {
+    padding: 1rem 0.02rem;
+    font-size: $mobile-subheader;
+    line-height: 1.25rem;
+  }
+}
