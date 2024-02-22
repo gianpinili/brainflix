@@ -1,8 +1,8 @@
 import './Main.scss';
-import Description from './Description.jsx';
-import CommentForm from './CommentForm.jsx';
-import Comments from './Comments.jsx';
-import Videos from './Videos.jsx';
+import Description from './Description/Description.jsx';
+import CommentForm from './CommentForm/CommentForm.jsx';
+import Comments from './Comments/Comments.jsx';
+import Videos from './Videos/Videos.jsx';
 
 function Main ({props}) {
 
