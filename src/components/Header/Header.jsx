@@ -1,10 +1,11 @@
 import './Header.scss';
+import mainLogo from '../../assets/logo/BrainFlix-logo.svg'
 
 function Header () {
  return (
   <header>
    <div className="header__logo">
-    <img src="https://placehold.co/50x50" alt="BrainFlix Logo" />
+    <img src={mainLogo} alt="BrainFlix Logo" />
    </div>
    <div className="header__nav">
     {/* SEARCH INPUT */}
