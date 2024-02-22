@@ -1,0 +1,51 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.header {
+  text-align: center;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  &__input {
+    font-family: AvenirNext LT Pro;
+    border: 1px solid $bf-mercury;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 75%;
+    margin-right: 1rem;
+    font-size: $reg-button;
+    line-height: 20px;
+  }
+
+  &-icon__mobile {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    object-position: 15% 50%;
+  }
+
+  &__button {
+    background-color: $bf-blue;
+    color: $bf-white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 7.4rem;
+    width: 90%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  &-icon__desktop {
+    display: none;
+  }
+}
