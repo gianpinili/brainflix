@@ -14,6 +14,7 @@
     font-weight: $bold;
     border-bottom: 1px solid $bf-mercury;
     line-height: 2.25rem;
+    color: $bf-black;
 
     @include tablet {
       border: none;
@@ -44,6 +45,7 @@
   &__channel {
     font-weight: $demi;
     padding-bottom: 1rem;
+    color: $bf-black;
 
     @include tablet {
       margin-right: 2rem;
@@ -63,7 +65,7 @@
   &__stats {
     font-size: $mobile-subheader;
     padding: 1rem 0;
-    margin-right: 3rem;
+    margin-right: 3.675rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

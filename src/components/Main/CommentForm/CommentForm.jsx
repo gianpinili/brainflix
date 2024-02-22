@@ -12,8 +12,8 @@ function CommentForm ({props}) {
 						<div className="comments__content">
 							<p className="comments__subtitle">Join the conversation</p>
 							<div className="comments__submission">
-								<input className="comments__input" type="text" placeholder="Add a comment" />
-								<button className="comments__button">Icon -Comment</button>
+								<textarea className="comments__input" type="text" placeholder="Add a new comment" />
+								<button className="comments__button">Comment</button>
 							</div>
 						</div>
         </div>

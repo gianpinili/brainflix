@@ -3,6 +3,7 @@
 @use "../../../styles/partials/typography" as *;
 
 .comments {
+  font-family: AvenirNext LT Pro;
   &__count {
     font-weight: $demi;
     font-size: $mobile-subheader;
@@ -14,12 +15,62 @@
   }
 
   &__icon {
-    padding-top: 1rem;
+    padding-top: 1.125rem;
   }
 
   &__img {
     width: 36px;
     height: 36px;
     border-radius: 50%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    width: 80%;
+  }
+  &__subtitle {
+    color: $bf-silver;
+    font-size: $reg-button;
+    font-weight: $demi;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  &__submission {
+    width: 50%;
+  }
+  &__input {
+    font-family: AvenirNext LT Pro;
+    padding: 12px;
+    background-color: $bf-alabaster;
+    border: 1px solid $bf-mercury;
+    border-radius: 4px;
+    height: 6rem;
+    width: 14.75rem;
+    resize: none;
+
+    &::placeholder {
+      font-size: 12.8px;
+    }
+
+    &:focus {
+      border: 1px solid $bf-blue;
+      outline: none;
+    }
+  }
+  &__button {
+    background-color: $bf-blue;
+    color: $bf-white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 7.4rem;
+    width: 10%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: $reg-button;
+    font-weight: $demi;
   }
 }
