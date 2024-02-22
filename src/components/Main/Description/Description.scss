@@ -118,7 +118,8 @@
     line-height: 1.25rem;
 
     @include tablet {
-      padding-right: 4rem;
+      padding-right: 3rem;
+      font-size: 13.75px;
     }
   }
 }

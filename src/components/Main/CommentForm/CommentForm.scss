@@ -7,6 +7,10 @@
   &__count {
     font-weight: $demi;
     font-size: $mobile-subheader;
+
+    @include tablet {
+      font-size: $reg-subheader;
+    }
   }
 
   &__form {
@@ -22,6 +26,11 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__content {
@@ -29,6 +38,12 @@
     flex-direction: column;
     margin-left: 1rem;
     width: 80%;
+
+    @include tablet {
+      width: 85%;
+      margin-left: 1.5rem;
+      margin-right: 1rem;
+    }
   }
   &__subtitle {
     color: $bf-silver;
@@ -39,6 +54,12 @@
   }
   &__submission {
     width: 50%;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      width: 39.5rem;
+    }
   }
   &__input {
     font-family: AvenirNext LT Pro;
@@ -50,8 +71,14 @@
     width: 14.75rem;
     resize: none;
 
+    @include tablet {
+      width: 32rem;
+      height: 2.6rem;
+    }
+
     &::placeholder {
-      font-size: 12.8px;
+      font-size: $mobile-subheader;
+      color: $bf-black;
     }
 
     &:focus {
@@ -65,12 +92,20 @@
     border: none;
     border-radius: 5px;
     padding: 0.8rem 7.4rem;
-    width: 10%;
+    width: 10rem;
     margin-top: 1rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: $reg-button;
     font-weight: $demi;
+
+    @include tablet {
+      margin: 0 0 0 1.5rem;
+      padding: 0.8rem 2.4rem;
+      width: 10.5rem;
+      font-size: 13px;
+    }
   }
 }

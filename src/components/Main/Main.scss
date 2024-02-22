@@ -6,7 +6,7 @@
   margin: 0 1rem;
 
   @include tablet {
-    margin: 0 2rem;
+    margin: 0 2.25rem;
   }
   @include desktop {
     display: flex;
@@ -24,6 +24,6 @@
 .videos {
   @include desktop {
     width: 35%;
-    padding-left: 2rem;
+    padding-left: 2.25rem;
   }
 }
