@@ -8,7 +8,7 @@ function Header () {
    </div>
    <div className="header__nav">
     {/* SEARCH INPUT */}
-     <input class="header__input" type="text" placeholder='Search' />
+     <input className="header__input" type="text" placeholder='Search with icon' />
     {/* UPLOAD BUTTON */}
     <button className="header__button">Upload (with Icon)</button>
      {/* ICONS */}

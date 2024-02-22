@@ -1,30 +1,35 @@
 import './Main.scss';
+import Description from './Description.jsx';
+import CommentForm from './CommentForm.jsx';
+import Comments from './Comments.jsx';
+import Videos from './Videos.jsx';
 
-function Main () {
+function Main ({props}) {
+
  return(
-  <main>
+  <main className='main'>
     <div className="main__left">
-     <h2 className="main__title">VIDEO TITLE - JSON</h2>
+			<Description props={props}/>
 
-     <section className="main__info">
-      <div className="main__artist">
-       <p className="main__channel">By Someone - JSON</p>
-       <p className="main__date">A date - JSON</p>
-      </div>
-      <div className="main__stats">
-       <p className="main__views">Views - JSON</p>
-       <p className="main__likes">Likes - JSON</p>
-      </div>
-     </section>
+		<section className="comments">
+			<CommentForm props={props} />	
 
-     <section className="comments">
-        <p className="comments__count">3 Comments - JSON</p>
-        <div className="comments__form">
-         
-        </div>
-     </section>
+			<Comments props={props} />
+			<Comments props={props} />
+			<Comments props={props} />
+		</section>
     </div>
-    <div className="main__right"></div>
+    <div className="videos">
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+			<Videos props={props} />
+
+		</div>
   </main>
  )
 }
