@@ -4,7 +4,26 @@
 
 .main {
   margin: 0 1rem;
+
+  @include tablet {
+    margin: 0 2rem;
+  }
   @include desktop {
     display: flex;
+    margin: 0 8rem;
+  }
+
+  &__left {
+    @include desktop {
+      width: 70%;
+      border-right: 1px solid $bf-mercury;
+    }
+  }
+}
+
+.videos {
+  @include desktop {
+    width: 35%;
+    padding-left: 2rem;
   }
 }

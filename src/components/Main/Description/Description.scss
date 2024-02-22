@@ -3,12 +3,23 @@
 @use "../../../styles/partials/typography" as *;
 
 .main {
+  &__title--mobile {
+    @include tablet {
+      display: none;
+    }
+  }
   &__title {
     padding: 0 0rem 1rem 0;
     font-size: $reg-section-header;
     font-weight: $bold;
     border-bottom: 1px solid $bf-mercury;
     line-height: 2.25rem;
+
+    @include tablet {
+      border: none;
+      padding: 0;
+      font-size: $reg-header;
+    }
   }
 
   &__info {
@@ -23,11 +34,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 0.5rem 0 0 0;
+    }
   }
 
   &__channel {
     font-weight: $demi;
     padding-bottom: 1rem;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
   }
 
   &__date {
@@ -47,6 +67,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__img {
@@ -66,6 +92,10 @@
   &__like {
     display: flex;
     align-items: center;
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__likes {
@@ -74,11 +104,19 @@
 
   &__heart {
     margin-right: 0.5rem;
+
+    @include tablet {
+      margin-left: 2rem;
+    }
   }
 
   &__description {
     padding: 1rem 0.02rem;
     font-size: $mobile-subheader;
     line-height: 1.25rem;
+
+    @include tablet {
+      padding-right: 4rem;
+    }
   }
 }

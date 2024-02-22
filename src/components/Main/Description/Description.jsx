@@ -6,7 +6,7 @@ function Description ({props}) {
  
  return (
   <>
-  <h2 className="main__title">Tech Trends:   The Future of Artificial Intelligence</h2>
+  <h2 className="main__title"><span className="main__title--mobile">Tech Trends:</span>  The Future of Artificial Intelligence</h2>
 
 <section className="main__info">
  <div className="main__artist">
