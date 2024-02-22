@@ -1,0 +1,25 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.comments {
+  &__count {
+    font-weight: $demi;
+    font-size: $mobile-subheader;
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__icon {
+    padding-top: 1rem;
+  }
+
+  &__img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}

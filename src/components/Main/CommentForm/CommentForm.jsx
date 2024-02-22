@@ -1,11 +1,13 @@
+import './CommentForm.scss';
+
 function CommentForm ({props}) {
 
  return (
   <>
-   <p className="comments__count">{props[0].comments.length} Comments</p>
+   <p className="comments__count">3 Comments</p>
         <div className="comments__form">
            <div className="comments__icon">
-							<img src="https://placehold.co/50x50" alt="" />
+							<img className='comments__img' src="https://placehold.co/50x50" alt="" />
 					 	</div>
 						<div className="comments__content">
 							<p className="comments__subtitle">Join the conversation</p>
