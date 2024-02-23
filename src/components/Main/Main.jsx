@@ -20,6 +20,7 @@ function Main ({props}) {
 		</section>
     </div>
     <div className="videos">
+				<p className="videos__text">Next Videos</p>
 			<Videos props={props} />
 			<Videos props={props} />
 			<Videos props={props} />

@@ -15,7 +15,7 @@
 
   &__form {
     display: flex;
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
 
   &__icon {
@@ -36,12 +36,11 @@
   &__content {
     display: flex;
     flex-direction: column;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     width: 80%;
 
     @include tablet {
       width: 85%;
-      margin-left: 1.5rem;
       margin-right: 1rem;
     }
   }

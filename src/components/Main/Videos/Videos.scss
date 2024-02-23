@@ -1,0 +1,46 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.videos {
+  margin-bottom: 2rem;
+  &__text {
+    text-transform: uppercase;
+    color: $bf-silver;
+    font-size: $mobile-subheader;
+    margin-bottom: 1rem;
+    font-weight: $demi;
+    letter-spacing: 0.3px;
+  }
+
+  &__template {
+    display: flex;
+    margin: 0.5rem 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 1rem;
+    padding: 1px 0 2px 0;
+  }
+
+  &__title {
+    font-weight: $demi;
+    font-size: $reg-button;
+    color: $bf-black;
+  }
+
+  &__channel {
+    font-size: $reg-button;
+  }
+
+  &__img {
+    width: 110px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: $bf-mercury;
+  }
+}

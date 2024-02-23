@@ -1,0 +1,53 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.comments {
+  &__list {
+    display: flex;
+    border-top: 1px solid $bf-mercury;
+    margin: 1rem 0;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 1px solid $bf-mercury;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 0 1rem;
+  }
+
+  &__name {
+    font-weight: $demi;
+    font-size: $mobile-subheader;
+    color: $bf-black;
+  }
+
+  &__timestamp {
+    color: $bf-silver;
+    font-size: $mobile-subheader;
+
+    @include desktop {
+      padding-right: 1rem;
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 1.25rem;
+
+    @include desktop {
+      padding-right: 1rem;
+    }
+  }
+}
