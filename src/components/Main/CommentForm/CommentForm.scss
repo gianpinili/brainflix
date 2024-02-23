@@ -43,6 +43,10 @@
       width: 85%;
       margin-right: 1rem;
     }
+
+    @include desktop {
+      margin-left: 2rem;
+    }
   }
   &__subtitle {
     color: $bf-silver;
@@ -55,7 +59,6 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
-      width: 39.5rem;
     }
   }
   &__input {

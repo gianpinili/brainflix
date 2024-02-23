@@ -4,6 +4,10 @@
 
 .videos {
   margin-bottom: 2rem;
+
+  @include desktop {
+    padding-left: 1.5rem;
+  }
   &__text {
     text-transform: uppercase;
     color: $bf-silver;
@@ -11,11 +15,20 @@
     margin-bottom: 1rem;
     font-weight: $demi;
     letter-spacing: 0.3px;
+
+    @include desktop {
+      margin-top: 1rem;
+      font-size: 11px;
+    }
   }
 
   &__template {
     display: flex;
     margin: 0.5rem 0;
+
+    @include tablet {
+      margin: 1rem 0;
+    }
   }
 
   &__info {
@@ -24,16 +37,28 @@
     justify-content: space-between;
     margin: 0 1rem;
     padding: 1px 0 2px 0;
+
+    @include desktop {
+      margin-right: 0;
+    }
   }
 
   &__title {
     font-weight: $demi;
     font-size: $reg-button;
     color: $bf-black;
+
+    @include desktop {
+      font-size: $mobile-subheader;
+    }
   }
 
   &__channel {
     font-size: $reg-button;
+
+    @include desktop {
+      font-size: $mobile-subheader;
+    }
   }
 
   &__img {
@@ -42,5 +67,9 @@
     object-fit: cover;
     border-radius: 4px;
     background-color: $bf-mercury;
+
+    @include desktop {
+      width: 100px;
+    }
   }
 }
