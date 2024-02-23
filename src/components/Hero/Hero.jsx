@@ -7,7 +7,7 @@ import volumeMute from '../../assets/icons/volume_off.svg';
 import fullScreen from '../../assets/icons/fullscreen.svg';
 import closeFullScreen from '../../assets/icons/close_fullscreen.svg';
 
-function Hero () {
+function Hero (props) {
  return (
   <section className="hero">
    <video controls poster='https://unit-3-project-api-0a5620414506.herokuapp.com/images/image0.jpg' className="hero__video"></video>

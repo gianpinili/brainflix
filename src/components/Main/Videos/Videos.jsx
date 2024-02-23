@@ -1,6 +1,7 @@
 import './Videos.scss';
 
-function Videos ({props}) {
+function Videos (props) {
+
  return (
   <>
 

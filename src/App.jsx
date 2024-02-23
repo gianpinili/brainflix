@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Main props={videoDetails}/>
+      <Main videoDetails={videoDetails}/>
     </>
   );
 }

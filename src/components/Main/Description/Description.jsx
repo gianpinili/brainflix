@@ -2,7 +2,8 @@ import './Description.scss';
 import viewsIcon from '../../../assets/icons/views.svg';
 import likeIcon from '../../../assets/icons/likes.svg';
 
-function Description ({props}) {
+function Description (props) {
+
  
  return (
   <>
@@ -24,7 +25,7 @@ function Description ({props}) {
   </div>
  </div>
 </section>
-<p className="main__description">{props[0].description}</p>
+<p className="main__description">Explore the cutting-edge developments and predictions for Artificial Intelligence in the coming years. From revolutionary breakthroughs in machine learning to the ethical considerations influencing AI advancements, this exploration transcends the boundaries of mere speculation. Join us on a journey that navigates the intricate interplay between innovation, ethics, and the ever-evolving tech frontier.</p>
   </>
  )
 }

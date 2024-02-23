@@ -1,6 +1,6 @@
 import './Comments.scss';
 
-function Comments ({props}) {
+function Comments (props) {
 
 return (
 	

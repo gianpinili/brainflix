@@ -4,31 +4,31 @@ import CommentForm from './CommentForm/CommentForm.jsx';
 import Comments from './Comments/Comments.jsx';
 import Videos from './Videos/Videos.jsx';
 
-function Main ({props}) {
+function Main (props) {
 
  return(
   <main className='main'>
     <div className="main__left">
-			<Description props={props}/>
+			<Description videoDetails={props}/>
 
 		<section className="comments">
-			<CommentForm props={props} />	
+			<CommentForm videoDetails={props} />	
 
-			<Comments props={props} />
-			<Comments props={props} />
-			<Comments props={props} />
+			<Comments videoDetails={props} />
+			<Comments videoDetails={props} />
+			<Comments videoDetails={props} />
 		</section>
     </div>
     <div className="videos">
 				<p className="videos__text">Next Videos</p>
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
-			<Videos props={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
+			<Videos videoDetails={props} />
 
 		</div>
   </main>
