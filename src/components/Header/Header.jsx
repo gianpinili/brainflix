@@ -2,8 +2,9 @@ import './Header.scss';
 import mainLogo from '../../assets/logo/BrainFlix-logo.svg'
 import headerIcon from '../../assets/images/Mohan-muruge.jpg'
 import searchIcon from '../../assets/icons/search.svg'
+import publishIcon from '../../assets/icons/publish.svg'
 
-//TODO: FIX SEARCH ICON STYLING
+//TODO: FIX SEARCH ICON STYLING FOR TABLET AND DESKTOP
 //TODO: ADD ICON TO UPLOAD BUTTON
 //TODO: ADD ICON TO COMMENT BUTTON
 
@@ -14,22 +15,22 @@ function Header () {
     <img src={mainLogo} alt="BrainFlix Logo" />
    </div>
 
-   <div className="header__right">
-   <div className="header__nav">
-    {/* <img className="header__search" src={searchIcon} alt="" /> */}
-    <div className="header__container">
-    <img className="header__img" src={searchIcon} alt="" />
-    <input className="header__input" type="text" placeholder= 'Search' />
+    <div className="header__right">
+        <div className="header__nav">
+            <div className="header__container">
+                <img className="header__img" src={searchIcon} alt="Search icon" />
+                <input className="header__input" type="text" placeholder= 'Search' />
+            </div>
+            <img className="header-icon__mobile" src={headerIcon} alt="" />
+        </div>
 
+    <div className="header__buttons">
+        <div className="header__upload">
+            <img className="header__publish" src={publishIcon} alt="" />
+            <button className="header__button">Upload</button>
+        </div>
+        <img className="header-icon__desktop" src={headerIcon} alt="" />
     </div>
-     {/* <input className="header__input" type="text" placeholder= 'Search' /> */}
-     <img className="header-icon__mobile" src={headerIcon} alt="" />
-     </div>
-
-   <div className="header__buttons">
-    <button className="header__button">Upload</button>
-    <img className="header-icon__desktop" src={headerIcon} alt="" />
-   </div>
    </div>
   </header>
  )
