@@ -2,10 +2,9 @@ import './Header.scss';
 import mainLogo from '../../assets/logo/BrainFlix-logo.svg'
 import headerIcon from '../../assets/images/Mohan-muruge.jpg'
 import searchIcon from '../../assets/icons/search.svg'
-import publishIcon from '../../assets/icons/publish.svg'
+import uploadIcon from '../../assets/icons/upload.svg'
 
-//TODO: FIX SEARCH ICON STYLING FOR TABLET AND DESKTOP
-//TODO: ADD ICON TO UPLOAD BUTTON
+//TODO: FIX SEARCH ICON STYLING FOR TABLET AND DESKTOP --not showing full size of container
 //TODO: ADD ICON TO COMMENT BUTTON
 
 function Header () {
@@ -26,7 +25,7 @@ function Header () {
 
     <div className="header__buttons">
         <div className="header__upload">
-            <img className="header__publish" src={publishIcon} alt="" />
+            <img className="header__publish" src={uploadIcon} alt="" />
             <button className="header__button">Upload</button>
         </div>
         <img className="header-icon__desktop" src={headerIcon} alt="" />
