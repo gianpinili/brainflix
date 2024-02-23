@@ -36,7 +36,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     width: 80%;
 
     @include tablet {
@@ -53,8 +53,6 @@
     margin-bottom: 0.25rem;
   }
   &__submission {
-    width: 50%;
-
     @include tablet {
       display: flex;
       justify-content: space-between;
@@ -68,7 +66,7 @@
     border: 1px solid $bf-mercury;
     border-radius: 4px;
     height: 6rem;
-    width: 14.75rem;
+    width: 100%;
     resize: none;
 
     @include tablet {
@@ -91,8 +89,8 @@
     color: $bf-white;
     border: none;
     border-radius: 5px;
-    padding: 0.8rem 7.4rem;
-    width: 10rem;
+    padding: 0.8rem 7.25rem;
+    width: 90%;
     margin-top: 1rem;
     text-transform: uppercase;
     display: flex;
