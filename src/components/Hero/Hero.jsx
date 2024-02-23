@@ -8,10 +8,12 @@ import fullScreen from '../../assets/icons/fullscreen.svg';
 import closeFullScreen from '../../assets/icons/close_fullscreen.svg';
 
 function Hero (props) {
+
+ const initialVideo = props.videos[0].image;
  return (
   <section className="hero">
-   <video controls poster='https://unit-3-project-api-0a5620414506.herokuapp.com/images/image0.jpg' className="hero__video"></video>
-
+   <video controls poster={initialVideo} className="hero__video">
+    </video>
   </section>
  )
 }

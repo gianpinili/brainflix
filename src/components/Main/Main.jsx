@@ -3,8 +3,13 @@ import Description from './Description/Description.jsx';
 import CommentForm from './CommentForm/CommentForm.jsx';
 import Comments from './Comments/Comments.jsx';
 import Videos from './Videos/Videos.jsx';
+import videoDetails from '../../data/video-details.json';
+import { useState } from 'react';
+
 
 function Main (props) {
+
+	const [videos, setVideos] = useState(videoDetails);
 
  return(
   <main className='main'>
@@ -21,14 +26,8 @@ function Main (props) {
     </div>
     <div className="videos">
 				<p className="videos__text">Next Videos</p>
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
-			<Videos videoDetails={props} />
+			<Videos videos={videos} />
+
 
 		</div>
   </main>
