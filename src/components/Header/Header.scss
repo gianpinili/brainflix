@@ -38,6 +38,18 @@
     }
   }
 
+  &__container {
+    font-family: AvenirNext LT Pro;
+    border: 1px solid $bf-mercury;
+    border-radius: 5px;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    width: 75%;
+    margin-right: 1rem;
+    font-size: $reg-button;
+    line-height: 20px;
+  }
+
   &__nav {
     display: flex;
     justify-content: center;
@@ -48,6 +60,10 @@
       margin: 0;
     }
   }
+
+  &__input {
+    border: none;
+  }
   // &__search {
   //   position: absolute;
   //   left: 1.5rem;
@@ -56,26 +72,26 @@
   //   height: 1rem;
   // }
 
-  &__input {
-    font-family: AvenirNext LT Pro;
-    border: 1px solid $bf-mercury;
-    border-radius: 5px;
-    padding: 0.5rem;
-    padding-left: 2rem;
-    width: 75%;
-    margin-right: 1rem;
-    font-size: $reg-button;
-    line-height: 20px;
+  // &__input {
+  //   font-family: AvenirNext LT Pro;
+  //   border: 1px solid $bf-mercury;
+  //   border-radius: 5px;
+  //   padding: 0.5rem;
+  //   padding-left: 2rem;
+  //   width: 75%;
+  //   margin-right: 1rem;
+  //   font-size: $reg-button;
+  //   line-height: 20px;
 
-    @include tablet {
-      margin-right: 1.5rem;
-      width: 15rem;
-    }
+  // @include tablet {
+  //   margin-right: 1.5rem;
+  //   width: 15rem;
+  // }
 
-    @include desktop {
-      margin-right: 2rem;
-    }
-  }
+  // @include desktop {
+  //   margin-right: 2rem;
+  // }
+  // }
 
   &-icon__mobile {
     border-radius: 50%;

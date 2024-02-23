@@ -3,6 +3,10 @@ import mainLogo from '../../assets/logo/BrainFlix-logo.svg'
 import headerIcon from '../../assets/images/Mohan-muruge.jpg'
 import searchIcon from '../../assets/icons/search.svg'
 
+//TODO: FIX SEARCH ICON STYLING
+//TODO: ADD ICON TO UPLOAD BUTTON
+//TODO: ADD ICON TO COMMENT BUTTON
+
 function Header () {
  return (
   <header className="header">
@@ -13,7 +17,12 @@ function Header () {
    <div className="header__right">
    <div className="header__nav">
     {/* <img className="header__search" src={searchIcon} alt="" /> */}
-     <input className="header__input" type="text" placeholder= 'Search' />
+    <div className="header__container">
+    <img className="header__img" src={searchIcon} alt="" />
+    <input className="header__input" type="text" placeholder= 'Search' />
+
+    </div>
+     {/* <input className="header__input" type="text" placeholder= 'Search' /> */}
      <img className="header-icon__mobile" src={headerIcon} alt="" />
      </div>
 
