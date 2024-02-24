@@ -3,11 +3,13 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Main from "./components/Main/Main";
 import videoDetails from "./data/video-details.json";
+import nextVideos from "./data/videos.json";
 import { useState } from "react";
 
 function App() {
   //state variables for videos and selected video
   const [videos, setVideos] = useState(videoDetails);
+  const [nextVideo, setNextVideo] = useState(nextVideos);
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   //function to handle video click
@@ -28,6 +30,8 @@ function App() {
         videos={videos}
         selectedVideo={selectedVideo}
         setSelectedVideo={setSelectedVideo}
+        nextVideo={nextVideo}
+        setNextVideo={setNextVideo}
       />
     </>
   );

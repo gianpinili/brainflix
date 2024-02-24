@@ -1,5 +1,5 @@
 import "./Comments.scss";
-import { convertTimestamp } from "../../../data/timeConverter";
+import { convertTimestamp } from "../../../functions/timeConverter";
 
 function Comments(props) {
   return (

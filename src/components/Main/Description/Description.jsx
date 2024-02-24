@@ -1,7 +1,7 @@
 import "./Description.scss";
 import viewsIcon from "../../../assets/icons/views.svg";
 import likeIcon from "../../../assets/icons/likes.svg";
-import { convertTimestamp } from "../../../data/timeConverter";
+import { convertTimestamp } from "../../../functions/timeConverter";
 
 function Description(props) {
   return (

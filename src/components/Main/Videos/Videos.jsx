@@ -3,7 +3,7 @@ import "./Videos.scss";
 function Videos(props) {
   return (
     <>
-      {props.videos
+      {props.nextVideo
         .filter((video) => video.id !== props.selectedVideo.id)
         .map((video) => (
           <div
