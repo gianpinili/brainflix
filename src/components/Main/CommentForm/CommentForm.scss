@@ -79,6 +79,7 @@
     @include tablet {
       width: 100%;
       height: 2.6rem;
+      margin-right: 1.5rem;
     }
 
     &::placeholder {
@@ -91,26 +92,50 @@
       outline: none;
     }
   }
+
+  &__submit {
+    border: none;
+    background-color: $bf-blue;
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__image {
+    width: 1.2rem;
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0.75rem;
+
+    @include tablet {
+      bottom: 0.7rem;
+    }
+  }
   &__button {
     background-color: $bf-blue;
     color: $bf-white;
     border: none;
     border-radius: 5px;
-    padding: 0.8rem 7.25rem;
-    width: 100%;
-    margin-top: 1rem;
     text-transform: uppercase;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: $reg-button;
     font-weight: $demi;
 
     @include tablet {
-      margin: 0 0 0 1.5rem;
-      padding: 0.8rem 2.4rem;
-      width: 10.5rem;
-      font-size: 13px;
+      padding: 0.8rem 2.75rem 0.8rem 3rem;
+      font-size: 12.5px;
+      font-weight: $reg;
     }
   }
 }
