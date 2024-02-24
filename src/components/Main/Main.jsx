@@ -3,30 +3,26 @@ import Description from './Description/Description.jsx';
 import CommentForm from './CommentForm/CommentForm.jsx';
 import Comments from './Comments/Comments.jsx';
 import Videos from './Videos/Videos.jsx';
-import videoDetails from '../../data/video-details.json';
 import { useState } from 'react';
 
 
 function Main (props) {
 
-	const [videos, setVideos] = useState(videoDetails);
-
  return(
   <main className='main'>
     <div className="main__left">
-			<Description videoDetails={props}/>
+			<Description videos={props.videos} selectedVideo={props.selectedVideo}/>
 
 		<section className="comments">
-			<CommentForm videoDetails={props} />	
+			<CommentForm videos={props.videos} selectedVideo={props.selectedVideo} />	
 
-			<Comments videoDetails={props} />
-			<Comments videoDetails={props} />
-			<Comments videoDetails={props} />
+			<Comments videos={props.videos} selectedVideo={props.selectedVideo}/>
+
 		</section>
     </div>
     <div className="videos">
 				<p className="videos__text">Next Videos</p>
-			<Videos videos={videos} />
+			<Videos videos={props.videos} selectedVideo={props.selectedVideo} handleVideoClick={props.handleVideoClick}/>
 
 
 		</div>

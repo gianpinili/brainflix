@@ -1,22 +1,36 @@
-import './Comments.scss';
+import "./Comments.scss";
 
-function Comments (props) {
-
-return (
-	
-<div className="comments__list">
-					<div className="comments__icon">
-						<img className='comments__img' src="https://placehold.co/50x50" alt="" />
-					</div>
-					<div className="comments__section">
-						<div className="comments__info">
-							<p className="comments__name">Noah Duncan</p>
-							<p className="comments__timestamp">8/11/2023</p>
-						</div>
-						<div className="comments__text">Your insights into the future of AI are enlightening! The intersection of technology and ethics is particularly thought-provoking. Keep us updated on the tech front!</div>
-					</div>
-     </div>
- )
+function Comments(props) {
+  return (
+    <>
+      {props.selectedVideo.comments.map((comment) => {
+        return (
+          <div key={comment.id} className="comments__list">
+            <div className="comments__icon">
+              <img
+                className="comments__img"
+                src="https://placehold.co/50x50"
+                alt=""
+              />
+            </div>
+            <div className="comments__section">
+              <div className="comments__info">
+                <p className="comments__name" key={comment.name}>
+                  {comment.name}
+                </p>
+                <p className="comments__timestamp" key={comment.timestamp}>
+                  {comment.timestamp}
+                </p>
+              </div>
+              <div className="comments__text" key={comment.comment}>
+                {comment.comment}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
 }
 
 export default Comments;

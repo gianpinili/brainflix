@@ -8,11 +8,9 @@ import fullScreen from '../../assets/icons/fullscreen.svg';
 import closeFullScreen from '../../assets/icons/close_fullscreen.svg';
 
 function Hero (props) {
-
- const initialVideo = props.videos[0].image;
  return (
   <section className="hero">
-   <video controls poster={initialVideo} className="hero__video">
+   <video controls poster={props.selectedVideo.image} className="hero__video">
     </video>
   </section>
  )
