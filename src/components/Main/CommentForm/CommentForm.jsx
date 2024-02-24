@@ -1,5 +1,6 @@
 import "./CommentForm.scss";
 import addCommentIcon from "../../../assets/icons/add_comment.svg";
+import userIcon from "../../../assets/images/Mohan-muruge.jpg";
 
 function CommentForm(props) {
   return (
@@ -7,11 +8,7 @@ function CommentForm(props) {
       <p className="comments__count">3 Comments</p>
       <div className="comments__form">
         <div className="comments__icon">
-          <img
-            className="comments__img"
-            src="https://placehold.co/50x50"
-            alt=""
-          />
+          <img className="comments__img" src={userIcon} alt="" />
         </div>
         <div className="comments__content">
           <p className="comments__subtitle">Join the conversation</p>

@@ -7,12 +7,8 @@ function Comments(props) {
       {props.selectedVideo.comments.map((comment) => {
         return (
           <div key={comment.id} className="comments__list">
-            <div className="comments__icon">
-              <img
-                className="comments__img"
-                src="https://placehold.co/50x50"
-                alt=""
-              />
+            <div className="comments__icon comments__img">
+              <div className="comments__img comments__img--holder" />
             </div>
             <div className="comments__section">
               <div className="comments__info">

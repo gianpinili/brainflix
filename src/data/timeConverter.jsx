@@ -1,28 +1,29 @@
-export const convertTimestamp = (timestamp) => {
-  const currentTimestamp = Math.floor(Date.now() / 1000); // Current timestamp in seconds
-  const elapsedSeconds = currentTimestamp - Math.floor(timestamp / 1000); // Time difference in seconds
+export const convertTimestamp = (props) => {
+  const defaultDate = new Date(props); // Convert string date to Date object
+  const dateNow = new Date(); // Current date and time
+  const timeAgoMillis = dateNow - defaultDate; // Difference in milliseconds
 
-  // Convert elapsed seconds to a human-readable format
-  const intervals = {
-    year: 31536000,
-    month: 2592000,
-    week: 604800,
-    day: 86400,
-  };
-
-  // Create an array of interval names in descending order of length using Object.keys
-  const intervalKeys = Object.keys(intervals); // ['year', 'month', 'week', 'day']
-
-  // Loop through the intervals in descending order of length and check if the elapsed time is greater than the current interval length
-  for (let i = 0; i < intervalKeys.length; i++) {
-    const intervalName = intervalKeys[i];
-    const intervalSeconds = intervals[intervalName];
-
-    const count = Math.floor(elapsedSeconds / intervalSeconds);
-    // If the elapsed time is greater than the current interval length, return the count and the interval name with an 's' at the end if the count is not 1 else return the count and the interval name
-    if (count >= 1) {
-      return `${count} ${intervalName}${count !== 1 ? "s" : ""} ago`;
-    }
+  // Dynamic timestamp calculation for default comments as well as new comments
+  let timeAgoString = "";
+  //if the difference is less than 1 minute
+  if (timeAgoMillis < 60000) {
+    timeAgoString = "just now";
+    //if the difference is less than 1 hour
+  } else if (timeAgoMillis < 3600000) {
+    timeAgoString = Math.floor(timeAgoMillis / 60000) + " minutes ago";
+    //if the difference is less than 1 day
+  } else if (timeAgoMillis < 86400000) {
+    timeAgoString = Math.floor(timeAgoMillis / 3600000) + " hours ago";
+    //if the difference is less than 1 month
+  } else if (timeAgoMillis < 2592000000) {
+    timeAgoString = Math.floor(timeAgoMillis / 86400000) + " days ago";
+    //if the difference is less than 1 year
+  } else if (timeAgoMillis < 31536000000) {
+    timeAgoString = Math.floor(timeAgoMillis / 2592000000) + " months ago";
+    //if the difference is greater than 1 year
+  } else {
+    timeAgoString = Math.floor(timeAgoMillis / 31536000000) + " years ago";
   }
-  return "Just now";
+
+  return timeAgoString;
 };

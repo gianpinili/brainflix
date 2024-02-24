@@ -10,7 +10,7 @@
 
   @include tablet {
     flex-direction: row;
-    padding: 0 2rem;
+    padding: 0 2.5rem 0 2rem;
     align-items: center;
     justify-content: space-between;
   }
@@ -77,6 +77,10 @@
 
     @include tablet {
       margin-right: 3rem;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 

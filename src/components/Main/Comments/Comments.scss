@@ -15,6 +15,11 @@
     }
   }
 
+  &__img--holder {
+    background-color: $bf-mercury;
+    overlay: rgba(206, 0, 0, 0.5);
+  }
+
   &__info {
     display: flex;
     justify-content: space-between;

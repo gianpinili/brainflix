@@ -3,11 +3,6 @@
 @use "../../../styles/partials/typography" as *;
 
 .main {
-  &__title--mobile {
-    @include tablet {
-      display: none;
-    }
-  }
   &__title {
     padding: 0 0rem 1rem 0;
     font-size: $reg-section-header;
@@ -53,6 +48,7 @@
 
     @include tablet {
       margin-right: 2rem;
+      font-size: 14.5px;
     }
   }
 

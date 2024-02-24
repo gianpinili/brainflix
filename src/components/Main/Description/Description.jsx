@@ -10,7 +10,7 @@ function Description(props) {
 
       <section className="main__info">
         <div className="main__artist">
-          <p className="main__channel">{props.selectedVideo.channel}</p>
+          <p className="main__channel">By {props.selectedVideo.channel}</p>
           <p className="main__date">
             {convertTimestamp(props.selectedVideo.timestamp)}
           </p>
