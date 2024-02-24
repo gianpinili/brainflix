@@ -1,4 +1,5 @@
 import "./Comments.scss";
+import { convertTimestamp } from "../../../data/timeConverter";
 
 function Comments(props) {
   return (
@@ -19,7 +20,7 @@ function Comments(props) {
                   {comment.name}
                 </p>
                 <p className="comments__timestamp" key={comment.timestamp}>
-                  {comment.timestamp}
+                  {convertTimestamp(comment.timestamp)}
                 </p>
               </div>
               <div className="comments__text" key={comment.comment}>

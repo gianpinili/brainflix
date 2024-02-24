@@ -1,6 +1,7 @@
 import "./Description.scss";
 import viewsIcon from "../../../assets/icons/views.svg";
 import likeIcon from "../../../assets/icons/likes.svg";
+import { convertTimestamp } from "../../../data/timeConverter";
 
 function Description(props) {
   return (
@@ -10,7 +11,9 @@ function Description(props) {
       <section className="main__info">
         <div className="main__artist">
           <p className="main__channel">{props.selectedVideo.channel}</p>
-          <p className="main__date">{props.selectedVideo.timestamp}</p>
+          <p className="main__date">
+            {convertTimestamp(props.selectedVideo.timestamp)}
+          </p>
         </div>
         <div className="main__stats">
           <div className="main__view">
