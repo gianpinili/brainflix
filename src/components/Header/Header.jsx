@@ -5,7 +5,6 @@ import searchIcon from "../../assets/icons/search.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
 
 //TODO: FIX SEARCH ICON STYLING FOR TABLET AND DESKTOP --not showing full size of container
-//TODO: ADD ICON TO COMMENT BUTTON
 //TODO: POSITION ABSOLUTE THE SEARCH BAR
 
 function Header() {

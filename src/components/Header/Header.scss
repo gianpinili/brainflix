@@ -16,7 +16,7 @@
   }
   @include desktop {
     padding: 0 8rem;
-    margin-right: 2.5rem;
+    margin-right: 1.5rem;
   }
 
   &__logo {
@@ -24,9 +24,15 @@
     height: 25px;
     display: flex;
     margin: 0 auto;
+    transition: all 0.3s ease-in-out;
     @include tablet {
       display: flex;
       margin: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
     }
   }
 
@@ -146,9 +152,11 @@
     background-color: $bf-blue;
     margin: 1rem 1rem 0.1rem 1rem;
     border-radius: 4px;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       cursor: pointer;
+      background-color: rgb(5, 119, 157);
     }
 
     @include tablet {
@@ -167,9 +175,11 @@
     text-transform: uppercase;
     font-size: $reg-button;
     font-weight: $demi;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       cursor: pointer;
+      background-color: rgb(5, 119, 157);
     }
 
     @include tablet {
