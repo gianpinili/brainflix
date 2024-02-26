@@ -68,6 +68,10 @@
     font-size: 13px;
     line-height: 1.25rem;
 
+    @include tablet {
+      font-size: 14px;
+    }
+
     @include desktop {
       padding-right: 1rem;
       font-size: 13.7px;

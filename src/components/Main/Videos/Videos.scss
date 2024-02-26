@@ -28,9 +28,11 @@
 
     @include tablet {
       margin: 1rem 0;
+      padding-right: 24rem;
     }
     @include desktop {
       margin: 1.25rem 0;
+      padding-right: 0;
     }
   }
 
@@ -51,6 +53,10 @@
     font-size: 13px;
     color: $bf-black;
 
+    @include tablet {
+      font-size: 14px;
+    }
+
     @include desktop {
       font-size: $mobile-subheader;
     }
@@ -62,6 +68,10 @@
 
   &__channel {
     font-size: $reg-button;
+
+    @include tablet {
+      font-size: 14px;
+    }
 
     @include desktop {
       font-size: $mobile-subheader;
