@@ -12,12 +12,20 @@
     &:last-child {
       border-bottom: 1px solid $bf-mercury;
       padding-bottom: 1rem;
+
+      @include desktop {
+        border-bottom: none;
+      }
     }
   }
 
   &__img--holder {
     background-color: $bf-mercury;
     overlay: rgba(206, 0, 0, 0.5);
+
+    @include tablet {
+      margin-top: 0.5rem;
+    }
   }
 
   &__info {
@@ -31,6 +39,10 @@
     flex-direction: column;
     margin: 1rem 0 0 1rem;
     width: 100%;
+
+    @include tablet {
+      padding: 0.5rem 0;
+    }
 
     @include desktop {
       margin: 1rem 0.5rem 0 2rem;
