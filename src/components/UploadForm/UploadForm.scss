@@ -16,7 +16,7 @@
   &__thumbnail {
     @include desktop {
       width: 50%;
-      margin-right: 1.75rem;
+      margin-right: 1.5rem;
     }
   }
   &__subtitle {
@@ -27,19 +27,19 @@
     margin-bottom: 0.25rem;
   }
   &__img {
-    width: 100%;
+    width: 18rem;
     height: 170px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
 
     @include tablet {
-      width: 50%;
+      width: 24rem;
       height: 200px;
     }
 
     @include desktop {
-      width: 100%;
+      width: 20.6rem;
       height: 175px;
     }
   }
