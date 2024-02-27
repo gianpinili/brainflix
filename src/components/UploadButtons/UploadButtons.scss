@@ -29,6 +29,11 @@
       display: flex;
       align-items: center;
     }
+
+    &:hover {
+      cursor: pointer;
+      color: $bf-hover;
+    }
   }
 
   &__button {

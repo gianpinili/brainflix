@@ -157,6 +157,7 @@
     &:hover {
       cursor: pointer;
       background-color: $bf-hover;
+      transform: scale(1.1);
     }
 
     @include tablet {
@@ -198,7 +199,6 @@
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.1);
       }
     }
   }

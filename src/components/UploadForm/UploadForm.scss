@@ -55,6 +55,11 @@
     &::placeholder {
       color: $bf-black;
     }
+
+    &:focus {
+      border: 2px solid $bf-blue;
+      outline: none;
+    }
   }
 
   &__input--description {
