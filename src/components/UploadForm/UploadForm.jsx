@@ -1,5 +1,5 @@
 import "./UploadForm.scss";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UploadButtons from "../../components/UploadButtons/UploadButtons.jsx";
 
 function UploadForm() {

@@ -3,9 +3,9 @@ import Description from "./Description/Description.jsx";
 import CommentForm from "./CommentForm/CommentForm.jsx";
 import Comments from "./Comments/Comments.jsx";
 import Videos from "./Videos/Videos.jsx";
-import { useState } from "react";
 
 function Main(props) {
+  console.log(props.apiVideos);
   return (
     <main className="main">
       <div className="main__left">
@@ -29,8 +29,7 @@ function Main(props) {
           videos={props.videos}
           selectedVideo={props.selectedVideo}
           handleVideoClick={props.handleVideoClick}
-          nextVideo={props.nextVideo}
-          setNextVideo={props.setNextVideo}
+          apiVideos={props.apiVideos}
         />
       </div>
     </main>

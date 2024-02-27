@@ -1,5 +1,5 @@
 import "./UploadButtons.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import publishButton from "../../assets/icons/publish.svg";
 
 function UploadButtons() {

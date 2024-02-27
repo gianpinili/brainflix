@@ -2,7 +2,7 @@ import "./App.scss";
 import Header from "./components/Header/Header.jsx";
 import Home from "./pages/Home/Home.jsx";
 import Upload from "./pages/Upload/Upload.jsx";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

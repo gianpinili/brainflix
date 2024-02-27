@@ -17,8 +17,8 @@ function Description(props) {
         </div>
         <div className="main__stats">
           <div className="main__view">
-            <span class="main__img">
-              <img class="main__icon" src={viewsIcon} alt="EyeCon" />
+            <span className="main__img">
+              <img className="main__icon" src={viewsIcon} alt="EyeCon" />
             </span>
             <span className="main__views">{props.selectedVideo.views}</span>
           </div>

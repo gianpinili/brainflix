@@ -1,14 +1,31 @@
 import Hero from "../../components/Hero/Hero.jsx";
 import Main from "../../components/Main/Main";
 import videoDetails from "../../data/video-details.json";
-import nextVideos from "../../data/videos.json";
-import { useState } from "react";
+// import nextVideos from "../../data/videos.json";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Home() {
-  //state variables for videos and selected video
+  //state variables for videos and selected video JSON FILE
   const [videos, setVideos] = useState(videoDetails);
-  const [nextVideo, setNextVideo] = useState(nextVideos);
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+
+  //state variables for API
+  const [apiVideos, setApiVideos] = useState([]);
+
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e072";
+  const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+
+  //Use useEffect and axios to getVideos
+  useEffect(() => {
+    const getVideos = async () => {
+      const response = await axios.get(`${apiUrl}videos?api_key=${apiKey}`);
+      setApiVideos(response.data);
+      // console.log(response.data);
+    };
+
+    getVideos();
+  }, []);
 
   //function to handle video click
   function handleVideoClick(id) {
@@ -27,8 +44,7 @@ function Home() {
         videos={videos}
         selectedVideo={selectedVideo}
         setSelectedVideo={setSelectedVideo}
-        nextVideo={nextVideo}
-        setNextVideo={setNextVideo}
+        apiVideos={apiVideos}
       />
     </>
   );
