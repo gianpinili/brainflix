@@ -140,52 +140,33 @@
     }
   }
 
-  &__upload {
-    display: flex;
-    border: none;
-    background-color: $bf-blue;
-    margin: 1rem 1rem 0.1rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    padding-left: 0.5rem;
-
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-      translate: 0 -2px;
-    }
-
-    @include tablet {
-      align-items: center;
-      margin: 0 1.5rem 0 0.5rem;
-      padding-left: 0.25rem;
-    }
-  }
-
   &__button {
     background-color: $bf-blue;
     color: $bf-white;
     border: none;
     border-radius: 4px;
     padding: 0.8rem 2.5rem 0.8rem 2rem;
-    width: 100%;
     text-transform: uppercase;
+    width: 90%;
     font-size: $reg-button;
     font-weight: $demi;
     transition: all 0.3s ease-in-out;
+    position: relative;
+    margin-top: 1rem;
 
     &:hover {
       cursor: pointer;
+      background-color: $bf-hover;
     }
 
     @include tablet {
-      padding: 0.8rem 2rem 0.8rem 3rem;
+      padding: 0.8rem 2.5rem 0.8rem 3rem;
       font-size: $reg-button;
-      margin: 0 1.5rem 0 0;
+      margin: 0 1.5rem 0 0.5rem;
     }
     @include desktop {
       margin-right: 2rem;
+      padding: 0.8rem 2.5rem 0.8rem 2.5rem;
     }
   }
 
@@ -194,6 +175,8 @@
     width: 1.75rem;
     height: 2.5rem;
     position: absolute;
+    left: 0;
+    bottom: 0;
   }
 
   &-icon__desktop {
@@ -207,6 +190,11 @@
       height: 40px;
       object-fit: cover;
       object-position: 15% 50%;
+      margin-left: 0.5rem;
+
+      @include desktop {
+        margin-left: 1rem;
+      }
 
       &:hover {
         cursor: pointer;

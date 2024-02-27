@@ -29,14 +29,14 @@ function Header() {
 
         <div className="header__buttons">
           <Link className="header__link" to="/upload">
-            <div className="header__upload">
+            <button className="header__button">
               <img
                 className="header__publish"
                 src={uploadIcon}
                 alt="Upload Icon"
               />
-              <button className="header__button">Upload</button>
-            </div>
+              Upload
+            </button>
           </Link>
           <img
             className="header-icon__desktop"
