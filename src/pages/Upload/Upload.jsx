@@ -1,5 +1,5 @@
 import UploadForm from "../../components/UploadForm/UploadForm.jsx";
-import UploadButtons from "../../components/UploadButtons/UploadButtons.jsx";
+import "./Upload.scss";
 
 function Upload() {
   return (

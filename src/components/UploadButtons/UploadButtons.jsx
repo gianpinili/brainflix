@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 function UploadButtons() {
   return (
     <div className="upload__buttons">
-      <Link to="/">
-        <button className="upload__button">Cancel</button>
+      <Link className="upload__cancel" to="/">
+        Cancel
       </Link>
       <button className="upload__button">Publish</button>
     </div>

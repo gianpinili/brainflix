@@ -1,0 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+  border-top: 1px solid $bf-mercury;
+
+  &__title {
+    font-size: $reg-section-header;
+    margin: 1.25rem 0;
+  }
+}

@@ -17,15 +17,23 @@ function UploadForm() {
         <p className="upload__subtitle">Video Thumbnail</p>
         <img
           className="upload__img"
-          src="https://placehold.co/300x200"
+          src="https://placehold.co/290x200"
           alt=""
         />
       </div>
       <div className="upload__info">
         <p className="upload__subtitle">Title your video</p>
-        <input className="upload__input" type="text" />
+        <input
+          className="upload__input"
+          type="text"
+          placeholder="Add a title to your video"
+        />
         <p className="upload__subtitle">Add a video description</p>
-        <textarea className="upload__input" type="text" />
+        <textarea
+          className="upload__input upload__input--description"
+          type="text"
+          placeholder="Add a description to your video"
+        />
       </div>
 
       <UploadButtons />

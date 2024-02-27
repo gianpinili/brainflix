@@ -1,0 +1,39 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  &__subtitle {
+    font-size: 12.25px;
+    text-transform: uppercase;
+    color: $bf-silver;
+    font-weight: $demi;
+    margin-bottom: 0.25rem;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    font-family: AvenirNext LT Pro;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid $bf-mercury;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+    &::placeholder {
+      color: $bf-black;
+    }
+  }
+
+  &__input--description {
+    height: 6rem;
+    resize: none;
+    overflow: hidden;
+  }
+}

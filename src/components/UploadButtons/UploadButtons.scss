@@ -1,0 +1,35 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  &__buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 0.25rem 0;
+  }
+
+  &__cancel {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: $demi;
+    font-size: $reg-button;
+    letter-spacing: 0.5px;
+    color: $bf-blue;
+    margin: 2rem 0;
+  }
+
+  &__button {
+    background-color: $bf-blue;
+    color: $bf-white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 2.5rem 0.8rem 2rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: $reg-button;
+    font-weight: $demi;
+    transition: all 0.3s ease-in-out;
+  }
+}
