@@ -37,6 +37,7 @@ function UploadForm() {
           />
         </div>
       </div>
+
       <UploadButtons />
     </form>
   );
