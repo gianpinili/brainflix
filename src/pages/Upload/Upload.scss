@@ -7,8 +7,23 @@
   padding: 0 1rem;
   border-top: 1px solid $bf-mercury;
 
+  @include tablet {
+    padding: 0 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @include desktop {
+    padding: 0 8rem;
+  }
+
   &__title {
     font-size: $reg-section-header;
     margin: 1.25rem 0;
+
+    @include tablet {
+      font-size: $reg-header;
+      padding: 0.5rem 0 1.5rem 0;
+      border-bottom: 1px solid $bf-mercury;
+    }
   }
 }

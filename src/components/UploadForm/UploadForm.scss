@@ -3,6 +3,11 @@
 @use "../../styles/partials/variables" as *;
 
 .upload {
+  &__content {
+    @include desktop {
+      display: flex;
+    }
+  }
   &__subtitle {
     font-size: 12.25px;
     text-transform: uppercase;
@@ -12,10 +17,15 @@
   }
   &__img {
     width: 100%;
-    height: 100%;
+    height: 170px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 1rem;
+
+    @include tablet {
+      width: 50%;
+      height: 200px;
+    }
   }
 
   &__input {
@@ -35,5 +45,13 @@
     height: 6rem;
     resize: none;
     overflow: hidden;
+  }
+
+  &__info {
+    @include tablet {
+      border-bottom: 1px solid $bf-mercury;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
