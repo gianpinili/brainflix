@@ -2,7 +2,7 @@ import "./Comments.scss";
 import { convertTimestamp } from "../../../functions/timeConverter";
 
 function Comments(props) {
-  console.log(props.apiSelectedVideo.comments);
+  // console.log(props.selectedVideo.comments);
   return (
     <>
       {props.selectedVideo.comments.map((comment) => {

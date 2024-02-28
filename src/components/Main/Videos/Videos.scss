@@ -68,6 +68,7 @@
 
   &__channel {
     font-size: $reg-button;
+    color: $bf-black;
 
     @include tablet {
       font-size: 14px;
@@ -96,5 +97,9 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 }

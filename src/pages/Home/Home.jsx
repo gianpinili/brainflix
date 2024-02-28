@@ -69,7 +69,6 @@ function Home() {
         setSelectedVideo={setSelectedVideo}
         apiVideos={apiVideos}
         apiSelectedVideo={apiSelectedVideo}
-        id={id}
       />
     </>
   );
