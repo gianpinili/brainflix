@@ -12,7 +12,7 @@ function Hero(props) {
     <section className="hero">
       <video
         controls
-        poster={props.selectedVideo.image}
+        poster={props.apiSelectedVideo.image}
         className="hero__video"
       ></video>
     </section>

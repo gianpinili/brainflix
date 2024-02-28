@@ -5,22 +5,25 @@ import Comments from "./Comments/Comments.jsx";
 import Videos from "./Videos/Videos.jsx";
 
 function Main(props) {
-  console.log(props.apiVideos);
+  // console.log(props.apiSelectedVideo);
   return (
     <main className="main">
       <div className="main__left">
         <Description
           videos={props.videos}
           selectedVideo={props.selectedVideo}
+          apiSelectedVideo={props.apiSelectedVideo}
         />
 
         <section className="comments">
-          <CommentForm
+          <CommentForm />
+
+          <Comments
             videos={props.videos}
             selectedVideo={props.selectedVideo}
+            apiSelectedVideo={props.apiSelectedVideo}
+            id={props.id}
           />
-
-          <Comments videos={props.videos} selectedVideo={props.selectedVideo} />
         </section>
       </div>
       <div className="videos">
@@ -28,8 +31,8 @@ function Main(props) {
         <Videos
           videos={props.videos}
           selectedVideo={props.selectedVideo}
-          handleVideoClick={props.handleVideoClick}
           apiVideos={props.apiVideos}
+          apiSelectedVideo={props.apiSelectedVideo}
         />
       </div>
     </main>

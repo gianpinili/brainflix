@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/:id" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
