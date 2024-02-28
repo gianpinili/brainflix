@@ -2,10 +2,12 @@ import "./Comments.scss";
 import { convertTimestamp } from "../../../functions/timeConverter";
 
 function Comments(props) {
-  // console.log(props.selectedVideo.comments);
+  const { apiSelectedVideo } = props;
+  const comments = apiSelectedVideo.comments || []; // Use empty array if comments is undefined
+
   return (
     <>
-      {props.selectedVideo.comments.map((comment) => {
+      {comments.map((comment) => {
         return (
           <div key={comment.id} className="comments__list">
             <div className="comments__icon comments__img">

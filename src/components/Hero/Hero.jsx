@@ -21,10 +21,10 @@ function Hero(props) {
 
 export default Hero;
 
-{
-  /* <div className="hero__controls">
+// {
+/* <div className="hero__controls">
 <button className='hero__buttons'>
- {/* PLAY BUTTON 
+{/* PLAY BUTTON 
 <img src={playButton} className="hero__play" alt="" />
 </button>
 {/* PAUSE BUTTON 
@@ -34,4 +34,4 @@ export default Hero;
 {/* FULL SCREEN BUTTON *
 <button className='hero__buttons'><img src={fullScreen} className="hero__fullscreen" alt="" /></button>
 </div> */
-}
+// }

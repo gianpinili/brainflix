@@ -1,6 +1,7 @@
 import "./UploadForm.scss";
 import { useNavigate } from "react-router-dom";
 import UploadButtons from "../../components/UploadButtons/UploadButtons.jsx";
+import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 
 function UploadForm() {
   const navigate = useNavigate();
@@ -16,11 +17,7 @@ function UploadForm() {
       <div className="upload__content">
         <div className="upload__thumbnail">
           <p className="upload__subtitle">Video Thumbnail</p>
-          <img
-            className="upload__img"
-            src="https://placehold.co/290x200"
-            alt=""
-          />
+          <img className="upload__img" src={uploadPreview} alt="" />
         </div>
         <div className="upload__info">
           <p className="upload__subtitle">Title your video</p>

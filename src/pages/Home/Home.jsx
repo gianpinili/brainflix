@@ -36,31 +36,27 @@ function Home() {
   //GET REQUEST VIDEO WITH ID
   useEffect(() => {
     const getVideo = async () => {
-      const response = await axios.get(
-        `${apiUrl}videos/${id}?api_key=${apiKey}`
-      );
-
-      setApiSelectedVideo(response.data);
-      // console.log(response.data);
+      try {
+        const response = await axios.get(
+          `${apiUrl}videos/${id}?api_key=${apiKey}`
+        );
+        setApiSelectedVideo(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
-    getVideo();
-  }, [id]);
 
-  //function to handle video click
-  // function handleVideoClick(id) {
-  //   const clickedVideo = videos.find((video) => {
-  //     return video.id === id;
-  //   });
-  //   //set selected video
-  //   setSelectedVideo(clickedVideo);
-  // }
+    if (id) {
+      getVideo();
+    }
+  }, [id]);
 
   return (
     <>
       <Hero
         videos={videos}
-        selectedVideo={selectedVideo}
         apiSelectedVideo={apiSelectedVideo}
+        apiVideos={apiVideos}
       />
       <Main
         // handleVideoClick={handleVideoClick}
@@ -69,6 +65,7 @@ function Home() {
         setSelectedVideo={setSelectedVideo}
         apiVideos={apiVideos}
         apiSelectedVideo={apiSelectedVideo}
+        id={id}
       />
     </>
   );

@@ -9,11 +9,7 @@ function Main(props) {
   return (
     <main className="main">
       <div className="main__left">
-        <Description
-          videos={props.videos}
-          selectedVideo={props.selectedVideo}
-          apiSelectedVideo={props.apiSelectedVideo}
-        />
+        <Description apiSelectedVideo={props.apiSelectedVideo} />
 
         <section className="comments">
           <CommentForm />
@@ -22,15 +18,12 @@ function Main(props) {
             videos={props.videos}
             selectedVideo={props.selectedVideo}
             apiSelectedVideo={props.apiSelectedVideo}
-            id={props.id}
           />
         </section>
       </div>
       <div className="videos">
         <p className="videos__text">Next Videos</p>
         <Videos
-          videos={props.videos}
-          selectedVideo={props.selectedVideo}
           apiVideos={props.apiVideos}
           apiSelectedVideo={props.apiSelectedVideo}
         />
