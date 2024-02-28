@@ -5,7 +5,6 @@ import Comments from "./Comments/Comments.jsx";
 import Videos from "./Videos/Videos.jsx";
 
 function Main(props) {
-  // console.log(props.apiSelectedVideo);
   return (
     <main className="main">
       <div className="main__left">
@@ -14,11 +13,7 @@ function Main(props) {
         <section className="comments">
           <CommentForm />
 
-          <Comments
-            videos={props.videos}
-            selectedVideo={props.selectedVideo}
-            apiSelectedVideo={props.apiSelectedVideo}
-          />
+          <Comments apiSelectedVideo={props.apiSelectedVideo} />
         </section>
       </div>
       <div className="videos">

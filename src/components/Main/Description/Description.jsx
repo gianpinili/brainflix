@@ -4,7 +4,6 @@ import likeIcon from "../../../assets/icons/likes.svg";
 import { convertTimestamp } from "../../../functions/timeConverter";
 
 function Description(props) {
-  // console.log(props.apiSelectedVideo.title);
   return (
     <>
       <h2 className="main__title">{props.apiSelectedVideo.title}</h2>

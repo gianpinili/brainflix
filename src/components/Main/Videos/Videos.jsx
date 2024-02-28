@@ -2,7 +2,6 @@ import "./Videos.scss";
 import { Link } from "react-router-dom";
 
 function Videos(props) {
-  // console.log(props.apiSelectedVideo);
   return (
     <>
       {props.apiVideos

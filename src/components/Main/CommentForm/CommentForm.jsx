@@ -2,7 +2,7 @@ import "./CommentForm.scss";
 import addCommentIcon from "../../../assets/icons/add_comment.svg";
 import userIcon from "../../../assets/images/Mohan-muruge.jpg";
 
-function CommentForm(props) {
+function CommentForm() {
   return (
     <>
       <p className="comments__count">3 Comments</p>
