@@ -11,7 +11,7 @@ function Main(props) {
         <Description apiSelectedVideo={props.apiSelectedVideo} />
 
         <section className="comments">
-          <CommentForm />
+          <CommentForm newComment={props.newComment} />
 
           <Comments apiSelectedVideo={props.apiSelectedVideo} />
         </section>
