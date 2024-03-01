@@ -4,8 +4,7 @@ import { convertTimestamp } from "../../functions/timeConverter";
 function Comments(props) {
   const { apiSelectedVideo } = props;
 
-  const comments = apiSelectedVideo.comments || []; // Use empty array if comments is undefined
-
+  const comments = apiSelectedVideo.comments;
   return (
     <>
       {comments?.map((comment) => {

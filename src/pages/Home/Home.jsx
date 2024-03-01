@@ -12,7 +12,7 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e080";
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e081";
   const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
   //Use useEffect and axios to getVideos
@@ -37,7 +37,7 @@ function Home() {
         console.log(error.message);
       }
     };
-
+    // if there is an id in the url call getVideo with the id else call getVideo with the first video
     if (id) {
       getVideo(id);
     } else {
@@ -51,7 +51,6 @@ function Home() {
   }, [id]);
 
   // State vriables for comments
-  // const [comments, setComments] = useState([]);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
@@ -63,12 +62,16 @@ function Home() {
     setComment(event.target.elements.comment.value);
 
     const postComment = async (comment) => {
-      const response = await axios.post(
-        `${apiUrl}videos/${id}/comments?api_key=${apiKey}`,
-        comment
-      );
-      // console.log(response.data);
-      return response.data;
+      try {
+        const response = await axios.post(
+          `${apiUrl}videos/${id}/comments?api_key=${apiKey}`,
+          comment
+        );
+        return response.data;
+      } catch (error) {
+        console.error("Error posting comment:", error);
+        throw error;
+      }
     };
 
     const newUserComment = {
@@ -76,32 +79,31 @@ function Home() {
       comment: event.target.elements.comment.value,
     };
 
-    //function to post the new comment
-    postComment(newUserComment).then((response) => {
-      //response is the new comment
-
-      //creates a copy of apiSelectedVideo using spread operator
-      const updatedApiSelectedVideo = { ...apiSelectedVideo };
-
-      // TODO: supposed to add the new comment to the beginning of the array
-      updatedApiSelectedVideo.comments.unshift(response.data);
-
-      //updates apiSelectedVideo with new comments
-      setApiSelectedVideo(updatedApiSelectedVideo);
-
-      // Clear input fields
-      event.target.elements.name.value = "";
-      event.target.elements.comment.value = "";
-
-      async function getVideo() {
-        const response = await axios.get(
-          `${apiUrl}videos/${id}?api_key=${apiKey}`
-        );
-        setApiSelectedVideo(response.data);
-      }
-      getVideo();
-    });
+    // Post the new comment and then fetch the updated video data
+    postComment(newUserComment)
+      .then(() => {
+        fetchUpdatedVideoData();
+        event.target.reset();
+      })
+      .catch((error) => {
+        console.error("Error posting comment:", error);
+      });
   }
+
+  // Function to fetch updated video data including the new comment
+  const fetchUpdatedVideoData = async () => {
+    try {
+      const response = await axios.get(
+        `${apiUrl}videos/${id}?api_key=${apiKey}`
+      );
+      // Set the updated video data
+      setApiSelectedVideo(response.data);
+
+      console.log(response.data.comments);
+    } catch (error) {
+      console.error("Error fetching updated video data:", error);
+    }
+  };
 
   return (
     <>

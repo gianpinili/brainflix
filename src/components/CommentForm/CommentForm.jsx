@@ -4,7 +4,7 @@ import userIcon from "../../assets/images/Mohan-muruge.jpg";
 import Comments from "../Comments/Comments.jsx";
 
 function CommentForm({ apiSelectedVideo, newComment }) {
-  const comments = apiSelectedVideo.comments; // Use empty array if comments is undefined
+  const comments = apiSelectedVideo.comments;
 
   return (
     <>
