@@ -12,7 +12,7 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e081";
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e083";
   const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
   //Use useEffect and axios to getVideos
@@ -32,6 +32,7 @@ function Home() {
         const response = await axios.get(
           `${apiUrl}videos/${id}?api_key=${apiKey}`
         );
+        response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
         setApiSelectedVideo(response.data);
       } catch (error) {
         console.log(error.message);
@@ -97,9 +98,8 @@ function Home() {
         `${apiUrl}videos/${id}?api_key=${apiKey}`
       );
       // Set the updated video data
+      response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
       setApiSelectedVideo(response.data);
-
-      console.log(response.data.comments);
     } catch (error) {
       console.error("Error fetching updated video data:", error);
     }
