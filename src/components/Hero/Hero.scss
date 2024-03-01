@@ -21,28 +21,33 @@
     height: 100%;
     object-fit: cover;
     margin: 0;
-  }
 
-  &__controls {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    position: relative;
-    bottom: 2.5rem;
-    width: 100%;
-    height: 1.5rem;
-  }
-
-  &__buttons {
-    background-color: $bf-black;
-    border: none;
-  }
-
-  &__play {
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    @include desktop {
+      max-height: 40rem;
+      object-fit: contain;
+    }
   }
 }
+//   &__controls {
+//     background-color: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 0.5rem 1rem;
+//     position: relative;
+//     bottom: 2.5rem;
+//     width: 100%;
+//     height: 1.5rem;
+//   }
+
+//   &__buttons {
+//     background-color: $bf-black;
+//     border: none;
+//   }
+
+//   &__play {
+//     width: 0.5rem;
+//     height: 0.5rem;
+//     background-color: rgba(0, 0, 0, 0.1);
+//   }
+// }

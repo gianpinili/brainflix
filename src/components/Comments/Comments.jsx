@@ -4,29 +4,33 @@ import { convertTimestamp } from "../../functions/timeConverter";
 function Comments(props) {
   const { apiSelectedVideo } = props;
 
-  const comments = apiSelectedVideo.comments; // Use empty array if comments is undefined
+  const comments = apiSelectedVideo.comments || []; // Use empty array if comments is undefined
 
   return (
     <>
       {comments?.map((comment) => {
-        return (
-          <div className="comments__list" key={comment.id}>
-            <div className="comments__icon comments__img">
-              <div className="comments__img comments__img--holder" />
-            </div>
-            <div className="comments__section">
-              <div className="comments__info" key={comment.name}>
-                <p className="comments__name">{comment.name}</p>
-                <p className="comments__timestamp" key={comment.timestamp}>
-                  {convertTimestamp(comment.timestamp)}
-                </p>
+        if (comment && comment.name && comment.timestamp && comment.comment) {
+          return (
+            <div className="comments__list" key={comment.id}>
+              <div className="comments__icon comments__img">
+                <div className="comments__img comments__img--holder" />
               </div>
-              <div className="comments__text" key={comment.comment}>
-                {comment.comment}
+              <div className="comments__section">
+                <div className="comments__info" key={comment?.name}>
+                  <p className="comments__name">{comment.name}</p>
+                  <p className="comments__timestamp" key={comment.timestamp}>
+                    {convertTimestamp(comment.timestamp)}
+                  </p>
+                </div>
+                <div className="comments__text" key={comment.comment}>
+                  {comment.comment}
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        } else {
+          return null;
+        }
       })}
     </>
   );

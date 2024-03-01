@@ -65,16 +65,16 @@
   }
 
   &__text {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.25rem;
 
     @include tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     @include desktop {
       padding-right: 1rem;
-      font-size: 13.7px;
+      font-size: 0.85625rem;
     }
   }
 }

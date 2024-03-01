@@ -18,7 +18,7 @@
 
     @include desktop {
       margin-top: 1rem;
-      font-size: 11px;
+      font-size: 0.6875rem;
     }
   }
 
@@ -50,11 +50,11 @@
 
   &__title {
     font-weight: $demi;
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: $bf-black;
 
     @include tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     @include desktop {
@@ -71,7 +71,7 @@
     color: $bf-black;
 
     @include tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     @include desktop {
@@ -84,14 +84,14 @@
   }
 
   &__img {
-    width: 101px;
-    height: 60px;
+    width: 6.3125rem;
+    height: 3.75rem;
     object-fit: cover;
     border-radius: 4px;
     background-color: $bf-mercury;
 
     @include desktop {
-      width: 100px;
+      width: 6.25rem;
     }
 
     &:hover {

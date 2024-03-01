@@ -27,8 +27,8 @@
   }
 
   &__img {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     object-fit: cover;
     object-position: 15% 50%;
@@ -39,8 +39,8 @@
 
     @include tablet {
       display: flex;
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 
@@ -75,7 +75,7 @@
   }
   &__input {
     font-family: AvenirNext LT Pro;
-    padding: 12px;
+    padding: 0.75rem;
     background-color: $bf-alabaster;
     border: 1px solid $bf-mercury;
     border-radius: 4px;
@@ -146,7 +146,7 @@
 
     @include tablet {
       padding: 0.8rem 1rem 0.8rem 1.75rem;
-      font-size: 12.5px;
+      font-size: 0.78125rem;
       margin-top: 0;
       width: 13rem;
     }

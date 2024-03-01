@@ -48,7 +48,7 @@
 
     @include tablet {
       margin-right: 2rem;
-      font-size: 14.5px;
+      font-size: 0.90625rem;
     }
   }
 
@@ -82,8 +82,8 @@
   }
 
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     margin-right: 0.5rem;
   }
 
@@ -119,7 +119,7 @@
 
     @include tablet {
       padding-right: 3rem;
-      font-size: 13.75px;
+      font-size: 0.859375rem;
     }
   }
 }

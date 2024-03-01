@@ -25,8 +25,8 @@
   }
 
   &__logo {
-    width: 120px;
-    height: 25px;
+    width: 7.5rem;
+    height: 1.5625rem;
     display: flex;
     margin: 0 auto;
     transition: all 0.3s ease-in-out;
@@ -66,7 +66,7 @@
     width: 75%;
     margin-right: 1rem;
     font-size: $reg-button;
-    line-height: 20px;
+    line-height: 1.25rem;
     position: relative;
     display: flex;
 
@@ -118,8 +118,8 @@
   }
   &-icon__mobile {
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     object-fit: cover;
     object-position: 15% 50%;
     transition: all 0.3s ease-in-out;
@@ -187,8 +187,8 @@
     @include tablet {
       display: flex;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
       object-fit: cover;
       object-position: 15% 50%;
       margin-left: 0.5rem;

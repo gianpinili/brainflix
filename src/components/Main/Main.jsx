@@ -10,14 +10,10 @@ function Main(props) {
       <div className="main__left">
         <Description apiSelectedVideo={props.apiSelectedVideo} />
 
-        <section className="comments">
-          <CommentForm
-            newComment={props.newComment}
-            apiSelectedVideo={props.apiSelectedVideo}
-          />
-
-          <Comments apiSelectedVideo={props.apiSelectedVideo} />
-        </section>
+        <CommentForm
+          newComment={props.newComment}
+          apiSelectedVideo={props.apiSelectedVideo}
+        />
       </div>
       <div className="videos">
         <p className="videos__text">Next Videos</p>
