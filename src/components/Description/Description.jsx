@@ -1,18 +1,18 @@
 import "./Description.scss";
-import viewsIcon from "../../../assets/icons/views.svg";
-import likeIcon from "../../../assets/icons/likes.svg";
-import { convertTimestamp } from "../../../functions/timeConverter";
+import viewsIcon from "../../assets/icons/views.svg";
+import likeIcon from "../../assets/icons/likes.svg";
+import { convertTimestamp } from "../../functions/timeConverter";
 
-function Description(props) {
+function Description({ apiSelectedVideo }) {
   return (
     <>
-      <h2 className="main__title">{props.apiSelectedVideo.title}</h2>
+      <h2 className="main__title">{apiSelectedVideo.title}</h2>
 
       <section className="main__info">
         <div className="main__artist">
-          <p className="main__channel">By {props.apiSelectedVideo.channel}</p>
+          <p className="main__channel">By {apiSelectedVideo.channel}</p>
           <p className="main__date">
-            {convertTimestamp(props.apiSelectedVideo.timestamp)}
+            {convertTimestamp(apiSelectedVideo.timestamp)}
           </p>
         </div>
         <div className="main__stats">
@@ -20,17 +20,17 @@ function Description(props) {
             <span className="main__img">
               <img className="main__icon" src={viewsIcon} alt="EyeCon" />
             </span>
-            <span className="main__views">{props.apiSelectedVideo.views}</span>
+            <span className="main__views">{apiSelectedVideo.views}</span>
           </div>
           <div className="main__like">
             <span className="main__img">
               <img src={likeIcon} alt="" className="main__heart" />
             </span>
-            <p className="main__likes">{props.apiSelectedVideo.likes}</p>
+            <p className="main__likes">{apiSelectedVideo.likes}</p>
           </div>
         </div>
       </section>
-      <p className="main__description">{props.apiSelectedVideo.description}</p>
+      <p className="main__description">{apiSelectedVideo.description}</p>
     </>
   );
 }

@@ -1,8 +1,8 @@
 import "./Main.scss";
-import Description from "./Description/Description.jsx";
-import CommentForm from "./CommentForm/CommentForm.jsx";
-import Comments from "./Comments/Comments.jsx";
-import Videos from "./Videos/Videos.jsx";
+import Description from "../Description/Description.jsx";
+import CommentForm from "../CommentForm/CommentForm.jsx";
+import Comments from "../Comments/Comments.jsx";
+import Videos from "../Videos/Videos.jsx";
 
 function Main(props) {
   return (
@@ -11,7 +11,10 @@ function Main(props) {
         <Description apiSelectedVideo={props.apiSelectedVideo} />
 
         <section className="comments">
-          <CommentForm newComment={props.newComment} />
+          <CommentForm
+            newComment={props.newComment}
+            apiSelectedVideo={props.apiSelectedVideo}
+          />
 
           <Comments apiSelectedVideo={props.apiSelectedVideo} />
         </section>

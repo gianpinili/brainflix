@@ -1,17 +1,19 @@
 import "./CommentForm.scss";
-import addCommentIcon from "../../../assets/icons/add_comment.svg";
-import userIcon from "../../../assets/images/Mohan-muruge.jpg";
+import addCommentIcon from "../../assets/icons/add_comment.svg";
+import userIcon from "../../assets/images/Mohan-muruge.jpg";
 
-function CommentForm(props) {
+function CommentForm({ apiSelectedVideo, newComment }) {
+  const comments = apiSelectedVideo.comments; // Use empty array if comments is undefined
+
   return (
     <>
-      <p className="comments__count">3 Comments</p>
+      <p className="comments__count">{comments?.length} Comments</p>
       <div className="comments__form">
         <div className="comments__icon">
           <img className="comments__img" src={userIcon} alt="" />
         </div>
 
-        <form onSubmit={props.newComment} className="comments__content">
+        <form onSubmit={newComment} className="comments__content">
           <p className="comments__subtitle">Join the conversation</p>
           <div className="comments__submission">
             <input

@@ -12,7 +12,7 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e073";
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e075";
   const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
   //Use useEffect and axios to getVideos
@@ -50,31 +50,41 @@ function Home() {
     }
   }, [id]);
 
-  //State vriables for comments
+  // State vriables for comments
   const [comments, setComments] = useState([]);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-  //create a post request
+  //TODO: CREATE A POST REQUEST WITH COMMENTS AND RENDER NEW COMMENTS ON TOP OF COMMENT LIST
   function newComment(event) {
     event.preventDefault();
-    const postComment = async (comment) => {
+    setName(event.target.elements.name.value);
+    setComment(event.target.elements.comment.value);
+
+    const postComment = async (comment, id) => {
       const response = await axios.post(
         "https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=19348616-ff13-48bd-8c24-eefc2b33e073",
         comment
       );
-
       // console.log(response.data);
       return response.data;
     };
 
-    console.log(event.target.name.value);
-    console.log(event.target.comment.value);
+    const newUserComment = {
+      name: event.target.elements.name.value,
+      comment: event.target.elements.comment.value,
+    };
 
-    const name = event.target.name.value;
-    const comment = event.target.comment.value;
+    const updatedComments = [...comments, newUserComment];
+    setComments(updatedComments);
 
-    postComment({ name, comment });
+    // Clear input fields
+    event.target.elements.name.value = "";
+    event.target.elements.comment.value = "";
+
+    console.log(newUserComment);
+
+    postComment(newUserComment);
   }
 
   return (
