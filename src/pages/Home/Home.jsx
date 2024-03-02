@@ -12,7 +12,7 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e083";
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e085";
   const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
   //Use useEffect and axios to getVideos
@@ -55,57 +55,29 @@ function Home() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-  //function that handles the new comment
-  function newComment(event) {
+  async function newComment(event) {
     event.preventDefault();
-    setName(event.target.elements.name.value);
-    setComment(event.target.elements.comment.value);
+    const newName = event.target.elements.name.value;
+    const newComment = event.target.elements.comment.value;
 
-    const postComment = async (comment) => {
-      try {
-        const response = await axios.post(
-          `${apiUrl}videos/${id}/comments?api_key=${apiKey}`,
-          comment
-        );
-        return response.data;
-      } catch (error) {
-        console.error("Error posting comment:", error);
-        throw error;
-      }
-    };
-
-    const newUserComment = {
-      name: event.target.elements.name.value,
-      comment: event.target.elements.comment.value,
-    };
-
-    // Post the new comment and then fetch the updated video data
-    postComment(newUserComment)
-      .then(() => {
-        fetchUpdatedVideoData();
-        event.target.reset();
-      })
-      .catch((error) => {
-        console.error("Error posting comment:", error);
-      });
-  }
-
-  // Function to fetch updated video data including the new comment
-  const fetchUpdatedVideoData = async () => {
     try {
+      await axios.post(`${apiUrl}videos/${id}/comments?api_key=${apiKey}`, {
+        name: newName,
+        comment: newComment,
+      });
       const response = await axios.get(
         `${apiUrl}videos/${id}?api_key=${apiKey}`
       );
-      // Set the updated video data
       response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
       setApiSelectedVideo(response.data);
+      event.target.reset();
     } catch (error) {
-      console.error("Error fetching updated video data:", error);
+      console.error("Error posting or fetching comment:", error);
     }
-  };
+  }
 
   //Function to delete a comment
-  function deleteComments(event) {
+  function deleteComments(commentId, id) {
     //gets the updated comments
     const getUpdatedComments = async () => {
       const response = await axios.get(
@@ -115,13 +87,13 @@ function Home() {
       setApiSelectedVideo(response.data);
     };
     //finally deletes the comment
-    const deleteComment = async (commentId) => {
+    const deleteComment = async (commentId, id) => {
       await axios.delete(
         `${apiUrl}videos/${id}/comments/${commentId}?api_key=${apiKey}`
       );
       getUpdatedComments(); //get the updated comments
     };
-    deleteComment(event); //delete the comment
+    deleteComment(commentId, id); //delete the comment
   }
 
   return (

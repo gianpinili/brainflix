@@ -18,19 +18,21 @@ function Comments(props) {
               <div className="comments__section">
                 <div className="comments__info" key={comment?.name}>
                   <p className="comments__name">{comment.name}</p>
+
                   <p className="comments__timestamp" key={comment.timestamp}>
                     {convertTimestamp(comment.timestamp)}
                   </p>
                 </div>
+
                 <div className="comments__text" key={comment.comment}>
                   {comment.comment}
-                  <button className="comments__delete">
-                    <img
-                      src={deleteIcon}
-                      alt=""
-                      className="comments__delete-button"
-                      onClick={() => props.deleteComments(comment.id)}
-                    />
+                  <button
+                    onClick={() =>
+                      props.deleteComments(comment.id, apiSelectedVideo.id)
+                    }
+                    className="comments__delete"
+                  >
+                    Delete
                   </button>
                 </div>
               </div>
