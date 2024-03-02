@@ -1,6 +1,5 @@
 import "./Comments.scss";
 import { convertTimestamp } from "../../functions/timeConverter";
-import deleteIcon from "../../assets/icons/views.svg";
 
 function Comments(props) {
   const { apiSelectedVideo } = props;

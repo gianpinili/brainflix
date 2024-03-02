@@ -3,8 +3,9 @@ import addCommentIcon from "../../assets/icons/add_comment.svg";
 import userIcon from "../../assets/images/Mohan-muruge.jpg";
 import Comments from "../Comments/Comments.jsx";
 
-function CommentForm({ apiSelectedVideo, newComment, deleteComments }) {
+function CommentForm({ apiSelectedVideo, newComment, deleteComments, id }) {
   const comments = apiSelectedVideo.comments;
+  // console.log(id);
 
   return (
     <>
@@ -14,8 +15,10 @@ function CommentForm({ apiSelectedVideo, newComment, deleteComments }) {
           <div className="comments__icon">
             <img className="comments__img" src={userIcon} alt="" />
           </div>
-
-          <form onSubmit={newComment} className="comments__content">
+          <form
+            onSubmit={(event) => newComment(event, id)}
+            className="comments__content"
+          >
             <p className="comments__subtitle">Join the conversation</p>
             <div className="comments__submission">
               <input
@@ -45,6 +48,7 @@ function CommentForm({ apiSelectedVideo, newComment, deleteComments }) {
         <Comments
           apiSelectedVideo={apiSelectedVideo}
           deleteComments={deleteComments}
+          id={id}
         />
       </section>
     </>

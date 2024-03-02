@@ -1,7 +1,6 @@
 import "./Main.scss";
 import Description from "../Description/Description.jsx";
 import CommentForm from "../CommentForm/CommentForm.jsx";
-import Comments from "../Comments/Comments.jsx";
 import Videos from "../Videos/Videos.jsx";
 
 function Main(props) {
@@ -14,6 +13,7 @@ function Main(props) {
           newComment={props.newComment}
           apiSelectedVideo={props.apiSelectedVideo}
           deleteComments={props.deleteComments}
+          id={props.id}
         />
       </div>
       <div className="videos">

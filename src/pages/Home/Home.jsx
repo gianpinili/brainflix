@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 function Home() {
   const params = useParams();
   const id = params.id;
-
+  // console.log(params);
   //state variables for API
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
@@ -51,28 +51,43 @@ function Home() {
     }
   }, [id]);
 
-  // State vriables for comments
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-
   async function newComment(event) {
     event.preventDefault();
     const newName = event.target.elements.name.value;
     const newComment = event.target.elements.comment.value;
 
-    try {
-      await axios.post(`${apiUrl}videos/${id}/comments?api_key=${apiKey}`, {
-        name: newName,
-        comment: newComment,
-      });
-      const response = await axios.get(
-        `${apiUrl}videos/${id}?api_key=${apiKey}`
-      );
-      response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
-      setApiSelectedVideo(response.data);
+    if (id) {
+      try {
+        await axios.post(`${apiUrl}videos/${id}/comments?api_key=${apiKey}`, {
+          name: newName,
+          comment: newComment,
+        });
+        const response = await axios.get(
+          `${apiUrl}videos/${id}?api_key=${apiKey}`
+        );
+        response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
+        setApiSelectedVideo(response.data);
+        event.target.reset();
+      } catch (error) {
+        console.error("Error posting or fetching comment:", error);
+      }
+    } else {
+      async function postDefaultPage() {
+        await axios.post(
+          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=${apiKey}`,
+          {
+            name: newName,
+            comment: newComment,
+          }
+        );
+        const response = await axios.get(
+          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
+        );
+        response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
+        setApiSelectedVideo(response.data);
+      }
+      postDefaultPage();
       event.target.reset();
-    } catch (error) {
-      console.error("Error posting or fetching comment:", error);
     }
   }
 
@@ -104,6 +119,7 @@ function Home() {
         apiSelectedVideo={apiSelectedVideo}
         newComment={newComment}
         deleteComments={deleteComments}
+        id={id}
       />
     </>
   );
