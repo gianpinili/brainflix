@@ -1,5 +1,6 @@
 import "./Comments.scss";
 import { convertTimestamp } from "../../functions/timeConverter";
+import deleteIcon from "../../assets/icons/views.svg";
 
 function Comments(props) {
   const { apiSelectedVideo } = props;
@@ -23,6 +24,14 @@ function Comments(props) {
                 </div>
                 <div className="comments__text" key={comment.comment}>
                   {comment.comment}
+                  <button className="comments__delete">
+                    <img
+                      src={deleteIcon}
+                      alt=""
+                      className="comments__delete-button"
+                      onClick={() => props.deleteComments(comment.id)}
+                    />
+                  </button>
                 </div>
               </div>
             </div>

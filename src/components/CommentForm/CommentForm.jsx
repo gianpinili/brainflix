@@ -3,7 +3,7 @@ import addCommentIcon from "../../assets/icons/add_comment.svg";
 import userIcon from "../../assets/images/Mohan-muruge.jpg";
 import Comments from "../Comments/Comments.jsx";
 
-function CommentForm({ apiSelectedVideo, newComment }) {
+function CommentForm({ apiSelectedVideo, newComment, deleteComments }) {
   const comments = apiSelectedVideo.comments;
 
   return (
@@ -42,7 +42,10 @@ function CommentForm({ apiSelectedVideo, newComment }) {
           </form>
         </div>
 
-        <Comments apiSelectedVideo={apiSelectedVideo} />
+        <Comments
+          apiSelectedVideo={apiSelectedVideo}
+          deleteComments={deleteComments}
+        />
       </section>
     </>
   );

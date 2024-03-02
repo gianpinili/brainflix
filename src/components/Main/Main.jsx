@@ -13,6 +13,7 @@ function Main(props) {
         <CommentForm
           newComment={props.newComment}
           apiSelectedVideo={props.apiSelectedVideo}
+          deleteComments={props.deleteComments}
         />
       </div>
       <div className="videos">

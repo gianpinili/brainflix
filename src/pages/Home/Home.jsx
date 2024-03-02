@@ -55,7 +55,6 @@ function Home() {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-  //TODO: RENDER NEW COMMENTS ON TOP OF COMMENT LIST
   //function that handles the new comment
   function newComment(event) {
     event.preventDefault();
@@ -105,6 +104,26 @@ function Home() {
     }
   };
 
+  //Function to delete a comment
+  function deleteComments(event) {
+    //gets the updated comments
+    const getUpdatedComments = async () => {
+      const response = await axios.get(
+        `${apiUrl}videos/${id}?api_key=${apiKey}`
+      );
+      response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
+      setApiSelectedVideo(response.data);
+    };
+    //finally deletes the comment
+    const deleteComment = async (commentId) => {
+      await axios.delete(
+        `${apiUrl}videos/${id}/comments/${commentId}?api_key=${apiKey}`
+      );
+      getUpdatedComments(); //get the updated comments
+    };
+    deleteComment(event); //delete the comment
+  }
+
   return (
     <>
       <Hero apiSelectedVideo={apiSelectedVideo} apiVideos={apiVideos} />
@@ -112,6 +131,7 @@ function Home() {
         apiVideos={apiVideos}
         apiSelectedVideo={apiSelectedVideo}
         newComment={newComment}
+        deleteComments={deleteComments}
       />
     </>
   );
