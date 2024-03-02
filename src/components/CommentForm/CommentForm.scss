@@ -152,4 +152,8 @@
       width: 13rem;
     }
   }
+
+  &__name--error {
+    border: 1px solid red;
+  }
 }

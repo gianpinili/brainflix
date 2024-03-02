@@ -5,7 +5,6 @@ import Comments from "../Comments/Comments.jsx";
 
 function CommentForm({ apiSelectedVideo, newComment, deleteComments, id }) {
   const comments = apiSelectedVideo.comments;
-  // console.log(id);
 
   return (
     <>
@@ -29,7 +28,7 @@ function CommentForm({ apiSelectedVideo, newComment, deleteComments, id }) {
               />
               <textarea
                 name="comment"
-                className="comments__input"
+                className="comments__input comments__input--comment"
                 type="text"
                 placeholder="Add a new comment"
               />

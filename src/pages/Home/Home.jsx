@@ -7,12 +7,12 @@ import { useParams } from "react-router-dom";
 function Home() {
   const params = useParams();
   const id = params.id;
-  // console.log(params);
+
   //state variables for API
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e085";
+  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e087";
   const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
 
   //Use useEffect and axios to getVideos
@@ -51,11 +51,40 @@ function Home() {
     }
   }, [id]);
 
+  //Function to post a new comment
   async function newComment(event) {
     event.preventDefault();
     const newName = event.target.elements.name.value;
     const newComment = event.target.elements.comment.value;
 
+    //form validation
+    if (newName === "") {
+      document
+        .getElementsByClassName("comments__input--name")[0]
+        .classList.add("comments__name--error");
+      document.getElementsByClassName("comments__input--name");
+      alert("Please enter a name");
+      return;
+    } else {
+      document
+        .getElementsByClassName("comments__input--name")[0]
+        .classList.remove("comments__name--error");
+    }
+
+    if (newComment === "") {
+      document
+        .getElementsByClassName("comments__input--comment")[0]
+        .classList.add("comments__name--error");
+      document.getElementsByClassName("comments__input--comment");
+      alert("Please enter a comment");
+      return;
+    } else {
+      document
+        .getElementsByClassName("comments__input--comment")[0]
+        .classList.remove("comments__name--error");
+    }
+
+    //if there is an id in the url post the comment
     if (id) {
       try {
         await axios.post(`${apiUrl}videos/${id}/comments?api_key=${apiKey}`, {
@@ -72,6 +101,7 @@ function Home() {
         console.error("Error posting or fetching comment:", error);
       }
     } else {
+      //if there is no id in the url post the comment to the default video
       async function postDefaultPage() {
         await axios.post(
           `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=${apiKey}`,
