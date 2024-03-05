@@ -12,13 +12,13 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e087";
-  const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+  // const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e087";
+  const apiUrl = "http://localhost:8080/";
 
   //Use useEffect and axios to getVideos
   useEffect(() => {
     const getVideos = async () => {
-      const response = await axios.get(`${apiUrl}videos?api_key=${apiKey}`);
+      const response = await axios.get(`${apiUrl}videos`);
       setApiVideos(response.data);
     };
 
@@ -29,9 +29,7 @@ function Home() {
   useEffect(() => {
     const getVideo = async (id) => {
       try {
-        const response = await axios.get(
-          `${apiUrl}videos/${id}?api_key=${apiKey}`
-        );
+        const response = await axios.get(`${apiUrl}videos/${id}`);
         response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
         setApiSelectedVideo(response.data);
       } catch (error) {
@@ -43,7 +41,7 @@ function Home() {
       getVideo(id);
     } else {
       async function getDefaultVideo() {
-        const response = await axios.get(`${apiUrl}videos/?api_key=${apiKey}`);
+        const response = await axios.get(`${apiUrl}videos`);
 
         getVideo(response.data[0].id);
       }
@@ -87,13 +85,11 @@ function Home() {
     //if there is an id in the url post the comment
     if (id) {
       try {
-        await axios.post(`${apiUrl}videos/${id}/comments?api_key=${apiKey}`, {
+        await axios.post(`${apiUrl}videos/${id}/comments`, {
           name: newName,
           comment: newComment,
         });
-        const response = await axios.get(
-          `${apiUrl}videos/${id}?api_key=${apiKey}`
-        );
+        const response = await axios.get(`${apiUrl}videos/${id}`);
         response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
         setApiSelectedVideo(response.data);
         event.target.reset();
@@ -104,14 +100,14 @@ function Home() {
       //if there is no id in the url post the comment to the default video
       async function postDefaultPage() {
         await axios.post(
-          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments?api_key=${apiKey}`,
+          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8/comments`,
           {
             name: newName,
             comment: newComment,
           }
         );
         const response = await axios.get(
-          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
+          `${apiUrl}videos/84e96018-4022-434e-80bf-000ce4cd12b8`
         );
         response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
         setApiSelectedVideo(response.data);
@@ -125,17 +121,13 @@ function Home() {
   function deleteComments(commentId, id) {
     //gets the updated comments
     const getUpdatedComments = async () => {
-      const response = await axios.get(
-        `${apiUrl}videos/${id}?api_key=${apiKey}`
-      );
+      const response = await axios.get(`${apiUrl}videos/${id}`);
       response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
       setApiSelectedVideo(response.data);
     };
     //finally deletes the comment
     const deleteComment = async (commentId, id) => {
-      await axios.delete(
-        `${apiUrl}videos/${id}/comments/${commentId}?api_key=${apiKey}`
-      );
+      await axios.delete(`${apiUrl}videos/${id}/comments/${commentId}`);
       getUpdatedComments(); //get the updated comments
     };
     deleteComment(commentId, id); //delete the comment
