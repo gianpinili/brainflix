@@ -7,7 +7,12 @@ function Videos(props) {
       {props.apiVideos
         .filter((video) => video.id !== props.apiSelectedVideo.id)
         .map((video) => (
-          <Link to={`/${video.id}`} key={video.id} className="videos__link">
+          <Link
+            onClick={() => props.updateViewCount(video.id)}
+            to={`/${video.id}`}
+            key={video.id}
+            className="videos__link"
+          >
             <div className="videos__template">
               <div className="videos__image">
                 <img className="videos__img" src={video.image} alt="" />

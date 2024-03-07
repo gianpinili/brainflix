@@ -146,6 +146,18 @@ function Home() {
     likeVideo();
   }
 
+  //function to update view count when a video is selected
+  function updateViewCount(id) {
+    const updateViewCount = async () => {
+      await axios.put(`${apiUrl}videos/${id}/views`);
+
+      //get updated video details
+      const response = await axios.get(`${apiUrl}videos/${id}`);
+      setApiSelectedVideo(response.data);
+    };
+    updateViewCount();
+  }
+
   return (
     <>
       <Hero apiSelectedVideo={apiSelectedVideo} apiVideos={apiVideos} />
@@ -156,6 +168,7 @@ function Home() {
         deleteComments={deleteComments}
         id={id}
         likeVideos={likeVideos}
+        updateViewCount={updateViewCount}
       />
     </>
   );

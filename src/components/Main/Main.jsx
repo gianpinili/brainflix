@@ -24,6 +24,7 @@ function Main(props) {
         <Videos
           apiVideos={props.apiVideos}
           apiSelectedVideo={props.apiSelectedVideo}
+          updateViewCount={props.updateViewCount}
         />
       </div>
     </main>
