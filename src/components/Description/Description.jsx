@@ -3,7 +3,7 @@ import viewsIcon from "../../assets/icons/views.svg";
 import likeIcon from "../../assets/icons/likes.svg";
 import { convertTimestamp } from "../../functions/timeConverter";
 
-function Description({ apiSelectedVideo }) {
+function Description({ apiSelectedVideo, likeVideos }) {
   return (
     <>
       <h2 className="main__title">{apiSelectedVideo.title}</h2>
@@ -24,7 +24,12 @@ function Description({ apiSelectedVideo }) {
           </div>
           <div className="main__like">
             <span className="main__img">
-              <img src={likeIcon} alt="" className="main__heart" />
+              <img
+                onClick={() => likeVideos(apiSelectedVideo.id)}
+                src={likeIcon}
+                alt=""
+                className="main__heart"
+              />
             </span>
             <p className="main__likes">{apiSelectedVideo.likes}</p>
           </div>

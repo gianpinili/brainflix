@@ -7,7 +7,10 @@ function Main(props) {
   return (
     <main className="main">
       <div className="main__left">
-        <Description apiSelectedVideo={props.apiSelectedVideo} />
+        <Description
+          apiSelectedVideo={props.apiSelectedVideo}
+          likeVideos={props.likeVideos}
+        />
 
         <CommentForm
           newComment={props.newComment}

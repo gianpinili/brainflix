@@ -133,6 +133,19 @@ function Home() {
     deleteComment(commentId, id); //delete the comment
   }
 
+  //function to like the video
+  function likeVideos(id) {
+    const likeVideo = async () => {
+      await axios.put(`${apiUrl}videos/${id}`);
+
+      //get updated video details
+      const response = await axios.get(`${apiUrl}videos/${id}`);
+      setApiSelectedVideo(response.data);
+    };
+
+    likeVideo();
+  }
+
   return (
     <>
       <Hero apiSelectedVideo={apiSelectedVideo} apiVideos={apiVideos} />
@@ -142,6 +155,7 @@ function Home() {
         newComment={newComment}
         deleteComments={deleteComments}
         id={id}
+        likeVideos={likeVideos}
       />
     </>
   );
