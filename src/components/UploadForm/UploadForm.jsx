@@ -44,6 +44,11 @@ function UploadForm() {
         .classList.remove("upload__input--error");
     }
 
+    if (formData.image === "") {
+      alert("Please choose an image to upload");
+      return;
+    }
+
     //use FormData to send the data to the server. use append to add the data
     const formDataToSend = new FormData();
     formDataToSend.append("title", formData.title);

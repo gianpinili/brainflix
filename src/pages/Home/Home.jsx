@@ -32,6 +32,11 @@ function Home() {
         const response = await axios.get(`${apiUrl}videos/${id}`);
         response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
         setApiSelectedVideo(response.data);
+        // Smoothly scroll to the top of the page
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       } catch (error) {
         console.log(error.message);
       }
