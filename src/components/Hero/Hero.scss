@@ -17,37 +17,146 @@
   }
 
   &__video {
+    display: flex;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     margin: 0;
 
+    @include tablet {
+    }
+
     @include desktop {
-      max-height: 40rem;
       object-fit: contain;
+      max-height: 40rem;
     }
   }
+  &__controls {
+    // background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem 0 1rem;
+    position: relative;
+    bottom: 2.5rem;
+    height: 1.5rem;
+
+    @include desktop {
+    }
+  }
+
+  &__left {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 1rem;
+    height: 1rem;
+    padding: 0rem 1rem 0.5rem 0.5rem;
+    border-radius: 4px;
+
+    @include tablet {
+      width: 2.25rem;
+      height: 1.75rem;
+      padding: 0.3rem 1rem 0.3rem 0.75rem;
+    }
+  }
+
+  &__middle {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.425rem;
+    border-radius: 4px;
+    // width: 12rem;
+    width: 100%;
+    height: 1rem;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+
+    @include tablet {
+      height: 1.75rem;
+      // width: 30rem;
+      width: 80%;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+  }
+
+  &__right {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+
+    width: 3rem;
+    height: 1rem;
+    padding: 0rem 0.1rem 0rem 0.1rem;
+
+    @include tablet {
+      width: 5rem;
+      height: 1.75rem;
+      padding: 0.3rem 1rem 0.3rem 0.75rem;
+    }
+  }
+
+  &__buttons {
+    background-color: $bf-black;
+    border: none;
+  }
+
+  &__play {
+    width: 0.4rem;
+    margin: 0.25rem 0rem 0.25rem 0.05rem;
+
+    @include tablet {
+      width: 0.65rem;
+    }
+  }
+
+  &__pause {
+    // display: none;
+
+    @include tablet {
+      width: 1rem;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    margin: 0.2rem 0.75rem 0 0;
+    accent-color: black;
+
+    @include tablet {
+      margin-bottom: 0.45rem;
+    }
+  }
+
+  &__timestamp {
+    color: $bf-white;
+    width: 3rem;
+
+    @include tablet {
+    }
+  }
+
+  &__full {
+    width: 1rem;
+
+    @include tablet {
+      width: 2rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &__close {
+    display: none;
+  }
+
+  &__up {
+    width: 1rem;
+
+    @include tablet {
+      width: 1.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+
+  &__down {
+    width: 1rem;
+  }
 }
-//   &__controls {
-//     background-color: rgba(0, 0, 0, 0.5);
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 0.5rem 1rem;
-//     position: relative;
-//     bottom: 2.5rem;
-//     width: 100%;
-//     height: 1.5rem;
-//   }
-
-//   &__buttons {
-//     background-color: $bf-black;
-//     border: none;
-//   }
-
-//   &__play {
-//     width: 0.5rem;
-//     height: 0.5rem;
-//     background-color: rgba(0, 0, 0, 0.1);
-//   }
-// }

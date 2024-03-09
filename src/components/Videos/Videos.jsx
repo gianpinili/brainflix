@@ -2,6 +2,7 @@ import "./Videos.scss";
 import { Link } from "react-router-dom";
 
 function Videos(props) {
+  const imageUrl = "http://localhost:8080/images";
   return (
     <>
       {props.apiVideos
@@ -15,7 +16,11 @@ function Videos(props) {
           >
             <div className="videos__template">
               <div className="videos__image">
-                <img className="videos__img" src={video.image} alt="" />
+                <img
+                  className="videos__img"
+                  src={`${imageUrl}/${video.image}`}
+                  alt=""
+                />
               </div>
               <div className="videos__info">
                 <p className="videos__title" key={video.title}>

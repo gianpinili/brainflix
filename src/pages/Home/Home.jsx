@@ -99,7 +99,7 @@ function Home() {
         setApiSelectedVideo(response.data);
         event.target.reset();
       } catch (error) {
-        console.error("Error posting or fetching comment:", error);
+        console.error("Error posting comment:", error);
       }
     } else {
       //if there is no id in the url post the comment to the default video
