@@ -12,7 +12,6 @@ function Home() {
   const [apiVideos, setApiVideos] = useState([]);
   const [apiSelectedVideo, setApiSelectedVideo] = useState({});
 
-  // const apiKey = "19348616-ff13-48bd-8c24-eefc2b33e087";
   const apiUrl = "http://localhost:8080/";
 
   //Use useEffect and axios to getVideos

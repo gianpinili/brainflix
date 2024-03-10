@@ -55,7 +55,7 @@ function UploadForm() {
     formDataToSend.append("description", formData.description);
     formDataToSend.append("image", formData.image); // Append the file here
 
-    //post request that posts the data to the server
+    //post request that posts the data to the server and navigate to the home page
     try {
       await axios.post(`${apiUrl}videos`, formDataToSend);
       alert("Video uploaded");

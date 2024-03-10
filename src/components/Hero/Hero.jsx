@@ -23,6 +23,7 @@ function Hero(props) {
 
   const imageUrl = "http://localhost:8080/images";
 
+  //set the video duration
   useEffect(() => {
     if (videoRef.current && videoRef.current.duration) {
       setDuration(videoRef.current.duration);
@@ -41,6 +42,7 @@ function Hero(props) {
     }
   }, [props.apiSelectedVideo]);
 
+  //toggle play/pause video on click of play/pause button
   const togglePlay = () => {
     try {
       if (videoRef.current) {
@@ -57,12 +59,14 @@ function Hero(props) {
     }
   };
 
+  //set video time
   const handleTimeUpdate = () => {
     if (videoRef.current) {
       setCurrentTime(videoRef.current.currentTime);
     }
   };
 
+  //set video time based on scrubber
   const handleScrub = (e) => {
     const scrubTime = parseFloat(e.target.value);
     if (videoRef.current) {
@@ -71,12 +75,14 @@ function Hero(props) {
     }
   };
 
+  //full screen video on click
   const handleFullScreen = () => {
     if (videoRef.current && videoRef.current.webkitRequestFullscreen) {
       videoRef.current.requestFullscreen();
     }
   };
 
+  //mute video on click
   const handleVolumeToggle = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted; // Toggle mute state
